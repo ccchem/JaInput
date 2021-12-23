@@ -8,18 +8,29 @@ public class KeyProcessor
     private char key1 = ' ';
 
     
+    /**
+     * Callback interface
+     */
     public static interface Callback
     {
         public void onText(String str);
     }
     
-    
+
+    /**
+     * Constructor
+     * @param cb callback interface implementation
+     */
     public KeyProcessor(Callback cb)
     {
         this.cb = cb;
     }
 
     
+    /**
+     * Process next input character
+     * @param ch input ASCII character
+     */
     public void processChar(char ch)
     {
         switch(ch)
@@ -36,7 +47,24 @@ public class KeyProcessor
         case 'E': do_E(); break;
         case 'O': do_O(); break;
         case '-': cb.onText("ー"); break;
-
+        
+        case ' ': cb.onText("　"); break;
+        case ',': cb.onText("、"); break;
+        case '.': cb.onText("。"); break;
+        case '?': cb.onText("？"); break;
+        case '!': cb.onText("！"); break;
+        
+        case '0': cb.onText("０"); break;
+        case '1': cb.onText("１"); break;
+        case '2': cb.onText("２"); break;
+        case '3': cb.onText("３"); break;
+        case '4': cb.onText("４"); break;
+        case '5': cb.onText("５"); break;
+        case '6': cb.onText("６"); break;
+        case '7': cb.onText("７"); break;
+        case '8': cb.onText("８"); break;
+        case '9': cb.onText("９"); break;
+        
         case 'k': key1 = ch; break;
         case 'K': key1 = Character.toLowerCase(ch); break;
         case 'g': key1 = ch; break;
@@ -46,6 +74,8 @@ public class KeyProcessor
         case 'S': key1 = Character.toLowerCase(ch); break;
         case 'z': key1 = ch; break;
         case 'Z': key1 = Character.toLowerCase(ch); break;
+        case 'j': key1 = ch; break;
+        case 'J': key1 = Character.toLowerCase(ch); break;
 
         case 't': do_t(); break;
         case 'T': do_T(); break;
@@ -76,6 +106,9 @@ public class KeyProcessor
         // Small
         case 'x': key1 = ch; break;
         case 'X': key1 = Character.toLowerCase(ch); break;
+        case 'q': key1 = ch; break;
+        case 'Q': key1 = Character.toLowerCase(ch); break;
+
         }
     }
 
@@ -141,6 +174,7 @@ public class KeyProcessor
         switch(key1)
         {
         case ' ': cb.onText("あ"); break;
+        case 'q': cb.onText("ぁ"); break;    // Small
         
         case 'k': cb.onText("か"); break;
         case 'g': cb.onText("が"); break;
@@ -162,8 +196,7 @@ public class KeyProcessor
         case 'r': cb.onText("ら"); break;
         case 'w': cb.onText("わ"); break;
         
-        // Small
-        case 'x': cb.onText("ゃ"); break;
+        case 'x': cb.onText("ゃ"); break;    // Small
         }
         
         key1 = ' ';
@@ -175,12 +208,13 @@ public class KeyProcessor
         switch(key1)
         {
         case ' ': cb.onText("い"); break;
+        case 'q': cb.onText("ぃ"); break;    // Small
         
         case 'k': cb.onText("き"); break;
         case 'g': cb.onText("ぎ"); break;
         
         case 's': cb.onText("し"); break;
-        case 'z': cb.onText("じ"); break;
+        case 'j': cb.onText("じ"); break;
         
         case 't': cb.onText("ち"); break;
         case 'd': cb.onText("ぢ"); break;
@@ -204,7 +238,8 @@ public class KeyProcessor
         switch(key1)
         {
         case ' ': cb.onText("う"); break;
-        
+        case 'q': cb.onText("ぅ"); break;    // Small
+
         case 'k': cb.onText("く"); break;
         case 'g': cb.onText("ぐ"); break;
         
@@ -224,8 +259,7 @@ public class KeyProcessor
         case 'y': cb.onText("ゆ"); break;
         case 'r': cb.onText("る"); break;
 
-        // Small
-        case 'x': cb.onText("ゅ"); break;
+        case 'x': cb.onText("ゅ"); break;    // Small
         }
         
         key1 = ' ';
@@ -237,7 +271,8 @@ public class KeyProcessor
         switch(key1)
         {
         case ' ': cb.onText("え"); break;
-        
+        case 'q': cb.onText("ぇ"); break;    // Small
+
         case 'k': cb.onText("け"); break;
         case 'g': cb.onText("げ"); break;
         
@@ -266,7 +301,8 @@ public class KeyProcessor
         switch(key1)
         {
         case ' ': cb.onText("お"); break;
-        
+        case 'q': cb.onText("ぉ"); break;    // Small
+
         case 'k': cb.onText("こ"); break;
         case 'g': cb.onText("ご"); break;
         
@@ -287,8 +323,7 @@ public class KeyProcessor
         case 'r': cb.onText("ろ"); break;
         case 'w': cb.onText("を"); break;
         
-        // Small
-        case 'x': cb.onText("ょ"); break;
+        case 'x': cb.onText("ょ"); break;    // Small
         }
         
         key1 = ' ';
@@ -300,6 +335,7 @@ public class KeyProcessor
         switch(key1)
         {
         case ' ': cb.onText("ア"); break;
+        case 'q': cb.onText("ァ"); break;    // Small
         
         case 'k': cb.onText("カ"); break;
         case 'g': cb.onText("ガ"); break;
@@ -321,8 +357,7 @@ public class KeyProcessor
         case 'r': cb.onText("ラ"); break;
         case 'w': cb.onText("ワ"); break;
         
-        // Small
-        case 'x': cb.onText("ャ"); break;
+        case 'x': cb.onText("ャ"); break;    // Small
         }
         
         key1 = ' ';
@@ -334,6 +369,7 @@ public class KeyProcessor
         switch(key1)
         {
         case ' ': cb.onText("イ"); break;
+        case 'q': cb.onText("ィ"); break;    // Small
         
         case 'k': cb.onText("キ"); break;
         case 'g': cb.onText("ギ"); break;
@@ -363,6 +399,7 @@ public class KeyProcessor
         switch(key1)
         {
         case ' ': cb.onText("ウ"); break;
+        case 'q': cb.onText("ゥ"); break;    // Small
         
         case 'k': cb.onText("ク"); break;
         case 'g': cb.onText("グ"); break;
@@ -396,6 +433,7 @@ public class KeyProcessor
         switch(key1)
         {
         case ' ': cb.onText("エ"); break;
+        case 'q': cb.onText("ェ"); break;    // Small
         
         case 'k': cb.onText("ケ"); break;
         case 'g': cb.onText("ゲ"); break;
@@ -425,7 +463,8 @@ public class KeyProcessor
         switch(key1)
         {
         case ' ': cb.onText("オ"); break;
-        
+        case 'q': cb.onText("ォ"); break;    // Small
+
         case 'k': cb.onText("コ"); break;
         case 'g': cb.onText("ゴ"); break;
         
@@ -446,8 +485,7 @@ public class KeyProcessor
         case 'r': cb.onText("ロ"); break;
         case 'w': cb.onText("ヲ"); break;
         
-        // Small
-        case 'x': cb.onText("ョ"); break;
+        case 'x': cb.onText("ョ"); break;    // Small
         }
         
         key1 = ' ';
