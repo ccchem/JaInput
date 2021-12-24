@@ -1,7 +1,7 @@
-package ek.jainput;
+package ek.jainput.proc;
 
 
-public class KeyProcessor
+public class HiraganaKeyProcessor implements KeyProcessor
 {
     private Callback cb;
     
@@ -9,19 +9,10 @@ public class KeyProcessor
 
     
     /**
-     * Callback interface
-     */
-    public static interface Callback
-    {
-        public void onText(String str);
-    }
-    
-
-    /**
      * Constructor
      * @param cb callback interface implementation
      */
-    public KeyProcessor(Callback cb)
+    public HiraganaKeyProcessor(Callback cb)
     {
         this.cb = cb;
     }
@@ -31,7 +22,7 @@ public class KeyProcessor
      * Process next input character
      * @param ch input ASCII character
      */
-    public void processChar(char ch)
+    public void processKey(char ch)
     {
         switch(ch)
         {
@@ -41,11 +32,10 @@ public class KeyProcessor
         case 'e': do_e(); break;
         case 'o': do_o(); break;
 
-        case 'A': do_A(); break;
-        case 'I': do_I(); break;
-        case 'U': do_U(); break;
-        case 'E': do_E(); break;
-        case 'O': do_O(); break;
+        case 'A': cb.onText("ゃ"); break;
+        case 'U': cb.onText("ゅ"); break;
+        case 'O': cb.onText("ょ"); break;
+        
         case '-': cb.onText("ー"); break;
         
         case ' ': cb.onText("　"); break;
@@ -65,6 +55,9 @@ public class KeyProcessor
         case '8': cb.onText("８"); break;
         case '9': cb.onText("９"); break;
         
+        case 'w': cb.onText("わ"); break;
+        case 'W': cb.onText("を"); break;
+        
         case 'k': key1 = ch; break;
         case 'K': key1 = Character.toLowerCase(ch); break;
         case 'g': key1 = ch; break;
@@ -77,13 +70,13 @@ public class KeyProcessor
         case 'j': key1 = ch; break;
         case 'J': key1 = Character.toLowerCase(ch); break;
 
-        case 't': do_t(); break;
-        case 'T': do_T(); break;
+        case 't': key1 = ch; break;
+        case 'T': cb.onText("っ"); break;
         case 'd': key1 = ch; break;
         case 'D': key1 = Character.toLowerCase(ch); break;
 
-        case 'n': do_n(); break;
-        case 'N': do_N(); break;
+        case 'n': key1 = ch; break;
+        case 'N': cb.onText("ん"); break;
         case 'm': key1 = ch; break;
         case 'M': key1 = Character.toLowerCase(ch); break;
         
@@ -99,9 +92,6 @@ public class KeyProcessor
         
         case 'r': key1 = ch; break;
         case 'R': key1 = Character.toLowerCase(ch); break;
-        
-        case 'w': key1 = ch; break;
-        case 'W': key1 = Character.toLowerCase(ch); break;
 
         // Small
         case 'x': key1 = ch; break;
@@ -111,63 +101,6 @@ public class KeyProcessor
 
         }
     }
-
-    
-    private void do_n()
-    {
-        if(key1 == 'n') 
-        {
-            cb.onText("ん");
-            key1 = ' ';
-        }
-        else
-        {
-            key1 = 'n';
-        }
-    }
-    
-    
-    private void do_N()
-    {
-        if(key1 == 'n') 
-        {
-            cb.onText("ン");
-            key1 = ' ';
-        }
-        else
-        {
-            key1 = 'n';
-        }
-    }
-    
-
-    private void do_t()
-    {
-        if(key1 == 'x') 
-        {
-            cb.onText("っ");
-            key1 = ' ';
-        }
-        else
-        {
-            key1 = 't';
-        }
-    }
-    
-    
-    private void do_T()
-    {
-        if(key1 == 'x') 
-        {
-            cb.onText("ッ");
-            key1 = ' ';
-        }
-        else
-        {
-            key1 = 't';
-        }
-    }
-
     
     private void do_a()
     {
@@ -194,9 +127,6 @@ public class KeyProcessor
 
         case 'y': cb.onText("や"); break;
         case 'r': cb.onText("ら"); break;
-        case 'w': cb.onText("わ"); break;
-        
-        case 'x': cb.onText("ゃ"); break;    // Small
         }
         
         key1 = ' ';
@@ -258,8 +188,6 @@ public class KeyProcessor
 
         case 'y': cb.onText("ゆ"); break;
         case 'r': cb.onText("る"); break;
-
-        case 'x': cb.onText("ゅ"); break;    // Small
         }
         
         key1 = ' ';
@@ -321,174 +249,8 @@ public class KeyProcessor
 
         case 'y': cb.onText("よ"); break;
         case 'r': cb.onText("ろ"); break;
-        case 'w': cb.onText("を"); break;
-        
-        case 'x': cb.onText("ょ"); break;    // Small
         }
         
         key1 = ' ';
-    }
-
-    
-    private void do_A()
-    {
-        switch(key1)
-        {
-        case ' ': cb.onText("ア"); break;
-        case 'q': cb.onText("ァ"); break;    // Small
-        
-        case 'k': cb.onText("カ"); break;
-        case 'g': cb.onText("ガ"); break;
-        
-        case 's': cb.onText("サ"); break;
-        case 'z': cb.onText("ザ"); break;
-        
-        case 't': cb.onText("タ"); break;
-        case 'd': cb.onText("ダ"); break;
-        
-        case 'n': cb.onText("ナ"); break;
-        case 'm': cb.onText("マ"); break;
-
-        case 'h': cb.onText("ハ"); break;
-        case 'b': cb.onText("バ"); break;
-        case 'p': cb.onText("パ"); break;
-
-        case 'y': cb.onText("ヤ"); break;
-        case 'r': cb.onText("ラ"); break;
-        case 'w': cb.onText("ワ"); break;
-        
-        case 'x': cb.onText("ャ"); break;    // Small
-        }
-        
-        key1 = ' ';
-    }
-
-    
-    private void do_I()
-    {
-        switch(key1)
-        {
-        case ' ': cb.onText("イ"); break;
-        case 'q': cb.onText("ィ"); break;    // Small
-        
-        case 'k': cb.onText("キ"); break;
-        case 'g': cb.onText("ギ"); break;
-        
-        case 's': cb.onText("シ"); break;
-        case 'z': cb.onText("ジ"); break;
-        
-        case 't': cb.onText("チ"); break;
-        case 'd': cb.onText("ヂ"); break;
-        
-        case 'n': cb.onText("ニ"); break;
-        case 'm': cb.onText("ミ"); break;
-
-        case 'h': cb.onText("ヒ"); break;
-        case 'b': cb.onText("ビ"); break;
-        case 'p': cb.onText("ピ"); break;
-
-        case 'r': cb.onText("リ"); break;
-        }
-        
-        key1 = ' ';
-    }
-
-    
-    private void do_U()
-    {
-        switch(key1)
-        {
-        case ' ': cb.onText("ウ"); break;
-        case 'q': cb.onText("ゥ"); break;    // Small
-        
-        case 'k': cb.onText("ク"); break;
-        case 'g': cb.onText("グ"); break;
-        
-        case 's': cb.onText("ス"); break;
-        case 'z': cb.onText("ズ"); break;
-        
-        case 't': cb.onText("ツ"); break;
-        case 'd': cb.onText("ヅ"); break;
-        
-        case 'n': cb.onText("ヌ"); break;
-        case 'm': cb.onText("ム"); break;
-
-        case 'h': cb.onText("フ"); break;
-        case 'b': cb.onText("ブ"); break;
-        case 'p': cb.onText("プ"); break;
-
-        case 'y': cb.onText("ユ"); break;
-        case 'r': cb.onText("ル"); break;
-
-        // Small
-        case 'x': cb.onText("ュ"); break;
-        }
-        
-        key1 = ' ';
-    }
-
-    
-    private void do_E()
-    {
-        switch(key1)
-        {
-        case ' ': cb.onText("エ"); break;
-        case 'q': cb.onText("ェ"); break;    // Small
-        
-        case 'k': cb.onText("ケ"); break;
-        case 'g': cb.onText("ゲ"); break;
-        
-        case 's': cb.onText("セ"); break;
-        case 'z': cb.onText("ゼ"); break;
-        
-        case 't': cb.onText("テ"); break;
-        case 'd': cb.onText("デ"); break;
-        
-        case 'n': cb.onText("ネ"); break;
-        case 'm': cb.onText("メ"); break;
-
-        case 'h': cb.onText("ヘ"); break;
-        case 'b': cb.onText("ベ"); break;
-        case 'p': cb.onText("ペ"); break;
-
-        case 'r': cb.onText("レ"); break;
-        }
-        
-        key1 = ' ';
-    }
-
-    
-    private void do_O()
-    {
-        switch(key1)
-        {
-        case ' ': cb.onText("オ"); break;
-        case 'q': cb.onText("ォ"); break;    // Small
-
-        case 'k': cb.onText("コ"); break;
-        case 'g': cb.onText("ゴ"); break;
-        
-        case 's': cb.onText("ソ"); break;
-        case 'z': cb.onText("ゾ"); break;
-        
-        case 't': cb.onText("ト"); break;
-        case 'd': cb.onText("ド"); break;
-        
-        case 'n': cb.onText("ノ"); break;
-        case 'm': cb.onText("モ"); break;
-
-        case 'h': cb.onText("ホ"); break;
-        case 'b': cb.onText("ボ"); break;
-        case 'p': cb.onText("ポ"); break;
-
-        case 'y': cb.onText("ヨ"); break;
-        case 'r': cb.onText("ロ"); break;
-        case 'w': cb.onText("ヲ"); break;
-        
-        case 'x': cb.onText("ョ"); break;    // Small
-        }
-        
-        key1 = ' ';
-    }
-
+    }    
 }
