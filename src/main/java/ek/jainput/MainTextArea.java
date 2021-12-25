@@ -8,10 +8,12 @@ import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
 
 import ek.jainput.proc.HiraganaKeyProcessor;
+import ek.jainput.proc.KanjiKeyProcessor;
 import ek.jainput.proc.KeyProcessor;
 
 
-public class MainTextArea extends JTextArea implements KeyListener, KeyProcessor.Callback
+public class MainTextArea extends JTextArea 
+    implements KeyListener, KeyProcessor.Callback
 {
     public static enum KbMode { Hiragana, Katakana, Kanji };
     
@@ -23,12 +25,13 @@ public class MainTextArea extends JTextArea implements KeyListener, KeyProcessor
     
     private KbModeListener kbModeListener;
     private HiraganaKeyProcessor hiraProc;
+    private KanjiKeyProcessor kanjiProc;
     private KeyProcessor keyProc;
     
     
     public MainTextArea(Font font)
     {
-        setColumns(50);
+        setColumns(20);
         setRows(3);
         setLineWrap(true);
         setFont(font);
@@ -39,6 +42,7 @@ public class MainTextArea extends JTextArea implements KeyListener, KeyProcessor
         
         addKeyListener(this);
         hiraProc = new HiraganaKeyProcessor(this);
+        kanjiProc = new KanjiKeyProcessor(this);
         keyProc = hiraProc;
     }
     
@@ -62,14 +66,17 @@ public class MainTextArea extends JTextArea implements KeyListener, KeyProcessor
             {
             // Ctrl-J
             case 10:
+                keyProc = kanjiProc;
                 if(kbModeListener != null) kbModeListener.onSetKbMode(KbMode.Kanji);
                 break;
             // Ctrl-H
             case 8:
+                keyProc = hiraProc;
                 if(kbModeListener != null) kbModeListener.onSetKbMode(KbMode.Hiragana);
                 break;
             // Ctrl-K
             case 11:
+                keyProc = hiraProc;
                 if(kbModeListener != null) kbModeListener.onSetKbMode(KbMode.Katakana);
                 break;
             }

@@ -16,11 +16,11 @@ public class JaInputMain
         System.setProperty("awt.useSystemAAFontSettings","on");
         System.setProperty("swing.aatext", "true");
         
-        KanjiService kanjiSrv = new KanjiService();
+        KanjiService.init();
         
         SwingUtilities.invokeLater(() ->
         {
-            MainWindow window = new MainWindow(kanjiSrv);
+            MainWindow window = new MainWindow();
             window.setVisible(true);
         });
     }

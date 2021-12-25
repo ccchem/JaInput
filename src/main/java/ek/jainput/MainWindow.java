@@ -10,29 +10,21 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 
-import ek.jainput.kanji.KanjiService;
-import ek.jainput.proc.HiraganaKeyProcessor;
-
 
 @SuppressWarnings("serial")
 public class MainWindow extends JFrame implements MainTextArea.KbModeListener
 {
     private CangjieTextField canTxt;
     private MainTextArea textArea;
-    private HiraganaKeyProcessor proc;
-    
-    private KanjiService kanjiSrv;
     
     private JLabel kbType;
     
     
-    public MainWindow(KanjiService kanjiSrv)
+    public MainWindow()
     {
         super("JaInput");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         
-        this.kanjiSrv = kanjiSrv;
-        
+        setDefaultCloseOperation(EXIT_ON_CLOSE);        
         initUI();
     }
 
@@ -47,6 +39,8 @@ public class MainWindow extends JFrame implements MainTextArea.KbModeListener
 
         textArea = new MainTextArea(txtFont);
         textArea.setKbModeListener(this);
+                
+        canTxt.setTextListener((txt) -> { textArea.onText(txt); });
         
         addWindowListener(new WindowAdapter()
         {
@@ -80,17 +74,4 @@ public class MainWindow extends JFrame implements MainTextArea.KbModeListener
         }
     }
     
-    
-    private void onKanji()
-    {
-        String txt = textArea.getSelectedText();
-        if(txt == null) txt = textArea.getText();
-        if(txt == null || txt.isEmpty()) return;
-        
-        String kanji = kanjiSrv.search(txt);
-        if(kanji != null)
-        {
-            //insertAtCursor(kanji);
-        }
-    }
 }
