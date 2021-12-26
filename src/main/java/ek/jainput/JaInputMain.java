@@ -3,7 +3,8 @@ package ek.jainput;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-import ek.jainput.kanji.KanjiService;
+import ek.jainput.service.KanjiService;
+import ek.jainput.ui.MainWindow;
 
 
 public class JaInputMain

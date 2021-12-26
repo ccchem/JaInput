@@ -1,17 +1,20 @@
-package ek.jainput;
+package ek.jainput.ui;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
+import javax.swing.text.DefaultEditorKit;
 
 import ek.jainput.proc.HiraganaKeyProcessor;
 import ek.jainput.proc.KanjiKeyProcessor;
 import ek.jainput.proc.KeyProcessor;
 
 
+@SuppressWarnings("serial")
 public class MainTextArea extends JTextArea 
     implements KeyListener, KeyProcessor.Callback
 {
@@ -31,14 +34,20 @@ public class MainTextArea extends JTextArea
     
     public MainTextArea(Font font)
     {
-        setColumns(20);
+        setColumns(30);
         setRows(3);
         setLineWrap(true);
         setFont(font);
 
+        setCaretColor(Color.GRAY);
+        setBackground(Colors.textBG);
+        setForeground(Colors.textFG);
+        
         getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_H, KeyEvent.CTRL_DOWN_MASK), "none");
         getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_K, KeyEvent.CTRL_DOWN_MASK), "none");
         getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_J, KeyEvent.CTRL_DOWN_MASK), "none");
+        
+        getActionMap().put(DefaultEditorKit.deletePrevCharAction, new CustomTextActions.DeletePrevCharAction());
         
         addKeyListener(this);
         hiraProc = new HiraganaKeyProcessor(this);

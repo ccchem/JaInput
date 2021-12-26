@@ -1,13 +1,16 @@
-package ek.jainput;
+package ek.jainput.ui;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.JTextField;
+import javax.swing.text.DefaultEditorKit;
 
-import ek.jainput.kanji.KanjiService;
 import ek.jainput.proc.TextListener;
+import ek.jainput.service.KanjiService;
+
 
 @SuppressWarnings("serial")
 public class CangjieTextField extends JTextField implements KeyListener
@@ -20,14 +23,22 @@ public class CangjieTextField extends JTextField implements KeyListener
     {
         initKeyMap();
         
-        this.setFont(font);
+        setFont(font);
+        setBackground(Colors.textBG);
+        setForeground(Colors.textFG);
+        setCaretColor(Color.GRAY);
+        
         addKeyListener(this);
+        
+        getActionMap().put(DefaultEditorKit.deletePrevCharAction, new CustomTextActions.DeletePrevCharAction());
     }
 
+    
     public void setTextListener(TextListener listener)
     {
         this.textListener = listener;
     }
+    
     
     @Override
     public void keyTyped(KeyEvent e)
@@ -109,12 +120,12 @@ public class CangjieTextField extends JTextField implements KeyListener
         keyMap['|'] = '中';
         
         keyMap['1'] = '人';
-        keyMap['!'] = '彳';
+        keyMap['!'] = '入';
     
         keyMap['2'] = '冫';
         keyMap['@'] = '厂';
         
-        keyMap['3'] = '阝';
+        keyMap['3'] = '三';
         keyMap['4'] = '止';
         
         keyMap['8'] = '八';
@@ -129,25 +140,25 @@ public class CangjieTextField extends JTextField implements KeyListener
         keyMap['w'] = '田';
         keyMap['W'] = '夕';
 
-        keyMap['e'] = '水';
+        keyMap['e'] = 'ヨ';
         
         keyMap['r'] = '口';
-        keyMap['R'] = '刂';
+        keyMap['R'] = '刀';
 
         keyMap['t'] = '丁';
         keyMap['T'] = '立';        
         
         keyMap['y'] = '卜';
+        keyMap['Y'] = '山';
 
-        keyMap['u'] = '山';
+        keyMap['u'] = '言';
 
-        keyMap['i'] = '言';
-        keyMap['I'] = '糸';
+        keyMap['i'] = '糸';
+        keyMap['I'] = '工';
         
-        //keyMap['o'] = '';
+        keyMap['o'] = '王';
 
         keyMap['p'] = '尸';
-        keyMap['P'] = '力';
     }
     
     
@@ -158,10 +169,12 @@ public class CangjieTextField extends JTextField implements KeyListener
         keyMap['A'] = '目';
 
         keyMap['s'] = '弓';
-
-        keyMap['d'] = '木';
+        keyMap['S'] = '阝';
+        
+        //keyMap['d'] = '木';
         
         keyMap['f'] = '火';
+        
         keyMap['g'] = '土';
         
         keyMap['h'] = '竹';
@@ -170,7 +183,8 @@ public class CangjieTextField extends JTextField implements KeyListener
         keyMap['j'] = '寸';
         keyMap['J'] = '儿';
 
-        keyMap['k'] = '大';
+        keyMap['k'] = '木';
+        keyMap['K'] = '大';
         
         keyMap['l'] = '心';
         keyMap['L'] = '小';
@@ -189,6 +203,9 @@ public class CangjieTextField extends JTextField implements KeyListener
         keyMap['v'] = '女';
         
         keyMap['b'] = '月';
-        keyMap['B'] = '几';        
+        keyMap['B'] = '几';
+        
+        keyMap['m'] = '水';
+        keyMap['M'] = '雨';        
     }
 }

@@ -1,4 +1,4 @@
-package ek.jainput.kanji;
+package ek.jainput.service;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
