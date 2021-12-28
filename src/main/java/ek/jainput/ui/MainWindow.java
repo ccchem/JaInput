@@ -2,7 +2,6 @@ package ek.jainput.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -11,38 +10,33 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 
 
 @SuppressWarnings("serial")
 public class MainWindow extends JFrame implements MainTextArea.KbModeListener
 {
-    private CangjieTextField canTxt;
+    private KanjiTextField canTxt;
     private MainTextArea textArea;
     
     private JLabel kbType;
     
     
-    public MainWindow()
+    public MainWindow(UISettings cfg)
     {
         super("JaInput");
         
-        setDefaultCloseOperation(EXIT_ON_CLOSE);        
-        initUI();
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        initUI(cfg);
     }
 
     
-    private void initUI()
+    private void initUI(UISettings cfg)
     {
-        Font txtFont = new Font("MS Gothic", Font.PLAIN, 36);
-        Font lblFont = new Font("MS Gothic", Font.PLAIN, 18);
-        
-        canTxt = new CangjieTextField(txtFont);
-        canTxt.setBorder(new CompoundBorder(new LineBorder(Color.GRAY), new EmptyBorder(10, 5, 10, 5)));
+        canTxt = new KanjiTextField(cfg);
+        //canTxt.setBorder(new CompoundBorder(new LineBorder(Color.GRAY), new EmptyBorder(10, 5, 10, 5)));
 
-        textArea = new MainTextArea(txtFont);
+        textArea = new MainTextArea(cfg);
         textArea.setKbModeListener(this);
         textArea.setBorder(new EmptyBorder(10, 5, 10, 5));
         
@@ -57,9 +51,9 @@ public class MainWindow extends JFrame implements MainTextArea.KbModeListener
         });
         
         kbType = new JLabel("あ");
-        kbType.setFont(lblFont);
+        kbType.setFont(cfg.labelFont);
         kbType.setBorder(BorderFactory.createEmptyBorder(5,10,5,10));
-        kbType.setForeground(Color.LIGHT_GRAY);
+        kbType.setForeground(cfg.labelFG);
         
         //getContentPane().setBackground(Colors.panelBg);
         

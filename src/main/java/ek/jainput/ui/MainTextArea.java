@@ -1,7 +1,6 @@
 package ek.jainput.ui;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -32,16 +31,16 @@ public class MainTextArea extends JTextArea
     private KeyProcessor keyProc;
     
     
-    public MainTextArea(Font font)
+    public MainTextArea(UISettings cfg)
     {
         setColumns(30);
         setRows(3);
         setLineWrap(true);
-        setFont(font);
+        setFont(cfg.textFont);
 
         setCaretColor(Color.GRAY);
-        setBackground(Colors.textBG);
-        setForeground(Colors.textFG);
+        setBackground(cfg.textBG);
+        setForeground(cfg.textFG);
         
         getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_H, KeyEvent.CTRL_DOWN_MASK), "none");
         getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_K, KeyEvent.CTRL_DOWN_MASK), "none");
