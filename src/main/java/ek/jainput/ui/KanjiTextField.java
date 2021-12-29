@@ -1,6 +1,5 @@
 package ek.jainput.ui;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -8,7 +7,6 @@ import java.awt.event.KeyListener;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
@@ -16,6 +14,9 @@ import javax.swing.text.DefaultEditorKit;
 
 import ek.jainput.proc.TextListener;
 import ek.jainput.proc.kanji.HitoProc;
+import ek.jainput.proc.kanji.KaneProc;
+import ek.jainput.proc.kanji.KanjiProc;
+import ek.jainput.proc.kanji.NichiProc;
 import ek.jainput.service.KanjiService;
 
 
@@ -28,7 +29,7 @@ public class KanjiTextField extends JPanel implements KeyListener
     
     private char key1 = 0;
     
-    private char[] keyMap = new char[255];
+    private KanjiProc[] key1Map = new KanjiProc[255];
     
     private TextListener textListener;
     
@@ -57,11 +58,11 @@ public class KanjiTextField extends JPanel implements KeyListener
         lblHelp2.setForeground(cfg.labelFG);
         lblHelp2.setBorder(new EmptyBorder(0, 5, 5, 5));
 
-        initKeyMap();
-
         add(txtInput);
         add(lblHelp1);
         add(lblHelp2);
+        
+        initKey1Map();
     }
 
     
@@ -108,12 +109,12 @@ public class KanjiTextField extends JPanel implements KeyListener
         }
         else
         {
-            switch(ch)
+            KanjiProc kp = key1Map[ch];
+            if(kp != null)
             {
-            case HitoProc.KEY1:
                 key1 = ch;
-                lblHelp1.setText(HitoProc.helpText1);
-                lblHelp2.setText(HitoProc.helpText2);
+                lblHelp1.setText(kp.getHelp1());
+                lblHelp2.setText(kp.getHelp2());
             }
         }
     }
@@ -136,11 +137,10 @@ public class KanjiTextField extends JPanel implements KeyListener
         else
         {
             String kanji = null;
-            
-            switch(key1)
+            KanjiProc kp = key1Map[key1];
+            if(kp != null)
             {
-            case HitoProc.KEY1:
-                kanji = HitoProc.getKanji(ch);
+                kanji = kp.getKanji(ch);
             }
             
             if(kanji != null)
@@ -185,16 +185,24 @@ public class KanjiTextField extends JPanel implements KeyListener
     }
 
     
-    private void initKeyMap()
+    private void initKey1Map()
     {
-        initKeyMap0();
-        initKeyMap1();
-        initKeyMap2();
-        initKeyMap3();
-    }
+        KanjiProc kp;
+        
+        kp = new HitoProc();
+        key1Map[kp.getKey1()] = kp;
+        
+        kp = new KaneProc();
+        key1Map[kp.getKey1()] = kp;
+        
+        kp = new NichiProc();
+        key1Map[kp.getKey1()] = kp;
 
+    }
+    
     
     // Row 0
+    /*
     private void initKeyMap0()
     {
         keyMap['1'] = '人';
@@ -223,10 +231,11 @@ public class KanjiTextField extends JPanel implements KeyListener
         
         keyMap['+'] = '十';
         keyMap['='] = '二';
-
     }
+    */
     
     // Row 1
+    /*
     private void initKeyMap1()
     {
         keyMap['q'] = '手';
@@ -259,9 +268,10 @@ public class KanjiTextField extends JPanel implements KeyListener
         keyMap['\\'] = '巾';
         keyMap['|'] = '中';
     }
-    
+    */
     
     // Row 2
+    /*
     private void initKeyMap2()
     {
         keyMap['a'] = '田';
@@ -292,9 +302,10 @@ public class KanjiTextField extends JPanel implements KeyListener
         keyMap['\''] = '戈';
         keyMap['"'] = '廿';
     }
-
+    */
 
     // Row 3
+    /*
     private void initKeyMap3()
     {
         keyMap['x'] = 'メ';
@@ -315,4 +326,5 @@ public class KanjiTextField extends JPanel implements KeyListener
         
         keyMap['/'] = 'ノ';
     }
+    */
 }
