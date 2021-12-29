@@ -24,6 +24,7 @@ public class JaInputMain
         
         UISettings cfg = new UISettings();
         cfg.textFont = new Font("MS Gothic", Font.PLAIN, 36);
+        cfg.helpFont = new Font("MS Gothic", Font.PLAIN, 24);
         cfg.labelFont = new Font("MS Gothic", Font.PLAIN, 18);
         
         SwingUtilities.invokeLater(() ->

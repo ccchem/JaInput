@@ -2,6 +2,12 @@ package ek.jainput.proc.kanji;
 
 public class NichiProc implements KanjiProc
 {
+    private static final String[] helpText = 
+    {
+        "罒 1  日 2  目 3  皿 4  白 s  自 j  血 c",
+        "貝 i  首 k  百 h"
+    };
+    
     @Override
     public char getKey1() 
     {
@@ -9,15 +15,9 @@ public class NichiProc implements KanjiProc
     }
     
     @Override
-    public String getHelp1() 
+    public String[] getHelp() 
     {
-        return "1 = 罒, 2 = 日, 3 = 目, 4 = 皿, c = 血, h = 百, i = 貝";
-    }
-
-    @Override
-    public String getHelp2() 
-    {
-        return "j = 自, k = 首, s = 白";
+        return helpText;
     }
 
     @Override

@@ -17,6 +17,7 @@ import ek.jainput.proc.kanji.HitoProc;
 import ek.jainput.proc.kanji.KaneProc;
 import ek.jainput.proc.kanji.KanjiProc;
 import ek.jainput.proc.kanji.NichiProc;
+import ek.jainput.proc.kanji.OokiProc;
 import ek.jainput.service.KanjiService;
 
 
@@ -49,12 +50,12 @@ public class KanjiTextField extends JPanel implements KeyListener
         txtInput.setBorder(new CompoundBorder(txtInput.getBorder(), new EmptyBorder(10, 5, 10, 5)));
         
         lblHelp1 = new JLabel();
-        lblHelp1.setFont(cfg.labelFont);
+        lblHelp1.setFont(cfg.helpFont);
         lblHelp1.setForeground(cfg.labelFG);
         lblHelp1.setBorder(new EmptyBorder(5, 5, 5, 5));
 
         lblHelp2 = new JLabel();
-        lblHelp2.setFont(cfg.labelFont);
+        lblHelp2.setFont(cfg.helpFont);
         lblHelp2.setForeground(cfg.labelFG);
         lblHelp2.setBorder(new EmptyBorder(0, 5, 5, 5));
 
@@ -113,8 +114,8 @@ public class KanjiTextField extends JPanel implements KeyListener
             if(kp != null)
             {
                 key1 = ch;
-                lblHelp1.setText(kp.getHelp1());
-                lblHelp2.setText(kp.getHelp2());
+                lblHelp1.setText(kp.getHelp()[0]);
+                lblHelp2.setText(kp.getHelp()[1]);
             }
         }
     }
@@ -189,142 +190,23 @@ public class KanjiTextField extends JPanel implements KeyListener
     {
         KanjiProc kp;
         
+        // 人
         kp = new HitoProc();
         key1Map[kp.getKey1()] = kp;
         
+        // 金
         kp = new KaneProc();
         key1Map[kp.getKey1()] = kp;
         
+        // 日
         kp = new NichiProc();
         key1Map[kp.getKey1()] = kp;
+        
+        // 大
+        kp = new OokiProc();
+        key1Map[kp.getKey1()] = kp;
+        
 
     }
     
-    
-    // Row 0
-    /*
-    private void initKeyMap0()
-    {
-        keyMap['1'] = '人';
-        keyMap['!'] = '火';
-        
-        keyMap['2'] = '厂';
-        
-        keyMap['3'] = '三';
-        
-        keyMap['4'] = '止';
-        keyMap['$'] = '円';        
-        
-        keyMap['5'] = '力';
-        keyMap['6'] = '五';
-                
-        keyMap['7'] = '七';
-        keyMap['&'] = '子';        
-        
-        keyMap['8'] = '八';
-        keyMap['*'] = '米';
-        
-        keyMap['9'] = '九';
-        keyMap['0'] = '国';        
-        
-        keyMap['-'] = '一';
-        
-        keyMap['+'] = '十';
-        keyMap['='] = '二';
-    }
-    */
-    
-    // Row 1
-    /*
-    private void initKeyMap1()
-    {
-        keyMap['q'] = '手';
-
-        //keyMap['w'] = '田';
-        keyMap['W'] = '金';
-
-        keyMap['e'] = '隹';
-        keyMap['E'] = 'ヨ';
-        
-        keyMap['r'] = '口';
-        keyMap['R'] = '刀';
-
-        keyMap['t'] = '丁';
-        keyMap['T'] = '立';
-        
-        keyMap['y'] = '卜';
-        keyMap['Y'] = '山';
-
-        keyMap['u'] = '言';
-
-        keyMap['i'] = '糸';
-        keyMap['I'] = '工';
-
-        keyMap['o'] = '大';
-        keyMap['O'] = '王';
-        
-        keyMap['p'] = '尸';
-        
-        keyMap['\\'] = '巾';
-        keyMap['|'] = '中';
-    }
-    */
-    
-    // Row 2
-    /*
-    private void initKeyMap2()
-    {
-        keyMap['a'] = '田';
-        keyMap['A'] = '夕';
-
-
-        keyMap['s'] = '弓';
-        keyMap['S'] = '阝';
-        
-        //keyMap['d'] = '木';
-        
-        //keyMap['f'] = '火';
-
-        keyMap['g'] = '月';
-        keyMap['G'] = '几';
-
-        keyMap['h'] = '竹';
-        keyMap['H'] = '門';        
-
-        keyMap['j'] = '寸';
-        keyMap['J'] = '儿';
-
-        keyMap['k'] = '木';
-
-        keyMap['l'] = '心';
-        keyMap['L'] = '小';
-        
-        keyMap['\''] = '戈';
-        keyMap['"'] = '廿';
-    }
-    */
-
-    // Row 3
-    /*
-    private void initKeyMap3()
-    {
-        keyMap['x'] = 'メ';
-        
-        keyMap['c'] = '土';
-        keyMap['C'] = '也';
-        
-        keyMap['v'] = '女';
-        
-        //keyMap['b'] = '月';
-        //keyMap['B'] = '几';
-
-        keyMap['n'] = '日';
-        keyMap['N'] = '目';
-
-        keyMap['m'] = '水';
-        keyMap['M'] = '雨';
-        
-        keyMap['/'] = 'ノ';
-    }
-    */
 }

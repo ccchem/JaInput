@@ -2,22 +2,22 @@ package ek.jainput.proc.kanji;
 
 public class KaneProc implements KanjiProc
 {
+    private static final String[] helpText = 
+    {
+        "介 2  今 i  会 4  合 a  全 z  食 t  金 c",
+        "令 r  命 p  僉 x"
+    };
+    
     @Override
     public char getKey1() 
     {
-        return 'c';
+        return 'a';
     }
 
     @Override
-    public String getHelp1() 
+    public String[] getHelp()
     {
-        return "2 = 介, 4 = 会, a = 合, c = 金, i = 今, k = 界, p = 命";
-    }
-    
-    @Override
-    public String getHelp2() 
-    { 
-        return "r = 令, t = 食, x = 僉, z = 全";
+        return helpText;
     }
     
     @Override
@@ -32,7 +32,6 @@ public class KaneProc implements KanjiProc
         case 'c': return("金");
         case 'i': return("今");
 
-        case 'k': return("界");
         case 'm': return("命");        
         
         case 'r': return("令");

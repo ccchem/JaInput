@@ -2,20 +2,21 @@ package ek.jainput.proc.kanji;
 
 public class HitoProc implements KanjiProc
 {
+    private static final String[] helpText = 
+    {
+        "人 h  亻 1  彳 2  公 4  八 8  谷 9  分 b",
+        "火 k  欠 r  次 t  入 u  行 x  隹 z"
+    };
+
     @Override
     public char getKey1() 
     {
         return '1';
     }
     
-    public String getHelp1() 
+    public String[] getHelp() 
     { 
-        return "h = 人, 1 = 亻, 2 = 彳, 4 = 公, 8 = 八, 9 = 谷, b = 分"; 
-    }
-    
-    public String getHelp2() 
-    { 
-        return "i = 今, k = 火, r = 欠, t = 次, u = 入, x = 行, z = 隹";
+        return helpText; 
     }
     
     @Override

@@ -42,6 +42,7 @@ public class MainWindow extends JFrame implements MainTextArea.KbModeListener
         
         canTxt.setTextListener((txt) -> { textArea.onText(txt); });
         
+        /*
         addWindowListener(new WindowAdapter()
         {
             public void windowOpened(WindowEvent e)
@@ -49,6 +50,7 @@ public class MainWindow extends JFrame implements MainTextArea.KbModeListener
                 textArea.requestFocus();
             }
         });
+        */
         
         kbType = new JLabel("あ");
         kbType.setFont(cfg.labelFont);
@@ -73,8 +75,8 @@ public class MainWindow extends JFrame implements MainTextArea.KbModeListener
         mainPanel.add(kbType, BorderLayout.SOUTH);
         
         getContentPane().add(mainPanel);
-        pack();
-        
+
+        setSize(600, 400);
         // Center on screen
         setLocationRelativeTo(null);
     }

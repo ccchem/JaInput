@@ -13,4 +13,5 @@ public class UISettings
 
     public Font labelFont;
     public Font textFont;
+    public Font helpFont;
 }
