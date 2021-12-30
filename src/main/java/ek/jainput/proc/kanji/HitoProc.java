@@ -4,8 +4,8 @@ public class HitoProc implements KanjiProc
 {
     private static final String[] helpText = 
     {
-        "人 h  亻 1  彳 2  公 4  八 8  谷 9  分 b",
-        "火 k  欠 r  次 t  入 u  行 x  隹 z"
+        "人 h  亻 1  彳 2  入 u  行 x  火 k  以 i",
+        "八 8  分 b  公 4  谷 9  欠 r  次 t  隹 z"
     };
 
     @Override
@@ -25,6 +25,7 @@ public class HitoProc implements KanjiProc
         switch(ch)
         {
         case 'h': return("人");
+        case 'i': return("以");
         
         case '1': return("亻");
         case '2': return("彳");

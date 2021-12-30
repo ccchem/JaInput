@@ -16,6 +16,7 @@ import ek.jainput.proc.TextListener;
 import ek.jainput.proc.kanji.HitoProc;
 import ek.jainput.proc.kanji.KaneProc;
 import ek.jainput.proc.kanji.KanjiProc;
+import ek.jainput.proc.kanji.KiProc;
 import ek.jainput.proc.kanji.NichiProc;
 import ek.jainput.proc.kanji.OokiProc;
 import ek.jainput.service.KanjiService;
@@ -206,6 +207,9 @@ public class KanjiTextField extends JPanel implements KeyListener
         kp = new OokiProc();
         key1Map[kp.getKey1()] = kp;
         
+        // 木
+        kp = new KiProc();
+        key1Map[kp.getKey1()] = kp;
 
     }
     
