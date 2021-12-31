@@ -1,17 +1,17 @@
 package ek.jainput.proc.kanji;
 
-public class KaneProc implements KanjiProc
+public class NakaProc implements KanjiProc
 {
     private static final String[] helpText = 
     {
-        "介 2  今 i  会 4  合 a  全 z  食 t  金 c",
-        "令 r  命 p  僉 x"
+        "中 1  虫 m  厶 4  _ a  _ z  _ t  _ c",
+        "_ r  _ p  _ x"
     };
     
     @Override
     public char getKey1() 
     {
-        return 'c';
+        return 'f';
     }
 
     @Override

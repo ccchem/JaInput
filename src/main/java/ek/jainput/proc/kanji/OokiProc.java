@@ -5,7 +5,7 @@ public class OokiProc implements KanjiProc
     private static final String[] helpText = 
     {
         "大 o  犬 i  太 f  天 t  矢 y  失 s  央 8",
-        "夫 -  夬 7  夭 /"
+        "夫 -  夬 7  夭 /  春 h"
     };
     
     @Override
@@ -39,6 +39,8 @@ public class OokiProc implements KanjiProc
         
         case '-': return("夫");
         case '/': return("夭");
+        
+        case 'h': return("春");        
         
         }
         

@@ -17,8 +17,10 @@ import ek.jainput.proc.kanji.HitoProc;
 import ek.jainput.proc.kanji.KaneProc;
 import ek.jainput.proc.kanji.KanjiProc;
 import ek.jainput.proc.kanji.KiProc;
+import ek.jainput.proc.kanji.NakaProc;
 import ek.jainput.proc.kanji.NichiProc;
 import ek.jainput.proc.kanji.OokiProc;
+import ek.jainput.proc.kanji.TakeProc;
 import ek.jainput.service.KanjiService;
 
 
@@ -49,16 +51,19 @@ public class KanjiTextField extends JPanel implements KeyListener
         txtInput.setBackground(cfg.textBG);
         txtInput.setForeground(cfg.textFG);
         txtInput.setBorder(new CompoundBorder(txtInput.getBorder(), new EmptyBorder(10, 5, 10, 5)));
+        txtInput.setAlignmentX(LEFT_ALIGNMENT);
         
         lblHelp1 = new JLabel();
         lblHelp1.setFont(cfg.helpFont);
         lblHelp1.setForeground(cfg.labelFG);
         lblHelp1.setBorder(new EmptyBorder(5, 5, 5, 5));
+        lblHelp1.setAlignmentX(LEFT_ALIGNMENT);
 
         lblHelp2 = new JLabel();
         lblHelp2.setFont(cfg.helpFont);
         lblHelp2.setForeground(cfg.labelFG);
         lblHelp2.setBorder(new EmptyBorder(0, 5, 5, 5));
+        lblHelp2.setAlignmentX(LEFT_ALIGNMENT);
 
         add(txtInput);
         add(lblHelp1);
@@ -100,14 +105,57 @@ public class KanjiTextField extends JPanel implements KeyListener
     @Override
     public void keyReleased(KeyEvent e)
     {
+        if(key1 != 0) return;
+        
+        if(e.getKeyCode() == KeyEvent.VK_F3) 
+        {
+            String txt = txtInput.getSelectedText();
+            if(txt == null || txt.isEmpty())
+            {
+                txt = txtInput.getText();
+            }            
+            if(txt == null || txt.isEmpty()) return;
+            
+            if(txt.length() == 1)
+            {
+                showReading(txt.charAt(0));
+            }
+            else
+            {
+                showReading(txt.charAt(txt.length()-1));
+            }
+        }
     }
 
+    
+    private void showReading(char kanji)
+    {
+        System.out.println(kanji);
+        KanjiService srv = KanjiService.getInstance();
+        
+        String kunR = srv.getKunReading(kanji);
+        if(kunR != null)
+        {
+            lblHelp1.setText(kunR);
+        }
+
+        String onR = srv.getOnReading(kanji);
+        if(onR != null)
+        {
+            lblHelp2.setText(onR);
+        }
+    }
     
     private void processFirstKey(char ch)
     {
         if(ch == '\n')
         {
             handleEnter();
+        }
+        // Esc
+        else if(ch == 27)
+        {
+            clearHelpLabel();
         }
         else
         {
@@ -160,7 +208,7 @@ public class KanjiTextField extends JPanel implements KeyListener
         String txt = txtInput.getText();
         if(!txt.isEmpty())
         {
-            String kanji = KanjiService.getInstance().search(txt);
+            String kanji = KanjiService.getInstance().findKanjiByParts(txt);
             System.out.println(kanji);
 
             if(kanji != null)
@@ -211,6 +259,14 @@ public class KanjiTextField extends JPanel implements KeyListener
         kp = new KiProc();
         key1Map[kp.getKey1()] = kp;
 
+        // 竹
+        kp = new TakeProc();
+        key1Map[kp.getKey1()] = kp;
+
+        // 中
+        kp = new NakaProc();
+        key1Map[kp.getKey1()] = kp;
+                
     }
     
 }

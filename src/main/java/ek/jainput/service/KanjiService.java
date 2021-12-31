@@ -11,15 +11,32 @@ public class KanjiService
 {
     private static KanjiService instance;
     
-    private Map<String, String> map;
+    // key = parts, value = kanji
+    private Map<String, String> partsMap;
+    private Map<Character, String> onReading;
+    private Map<Character, String> kunReading;
     
+    /**
+     * Private constructor. Use getInstance() instead.
+     * @throws Exception
+     */
     private KanjiService() throws Exception
     {
-        map = new HashMap<>(500);
-        loadFile("g1.txt");
+        partsMap = new HashMap<>(500);
+        loadPartsFile(partsMap, "g1.txt");
+        
+        onReading = new HashMap<>(2_000);
+        loadReadingFile(onReading, "on-1-8.txt");
+
+        kunReading = new HashMap<>(2_000);
+        loadReadingFile(kunReading, "kun-1-8.txt");
     }
 
     
+    /**
+     * Get singleton instance
+     * @return the singleton
+     */
     public static KanjiService getInstance()
     {
         return instance;
@@ -31,19 +48,32 @@ public class KanjiService
         instance = new KanjiService();
     }
     
-    public String search(String str)
+    
+    public String findKanjiByParts(String str)
     {
-        return map.get(str);
+        return partsMap.get(str);
+    }
+
+
+    public String getOnReading(char ch)
+    {
+        return onReading.get(ch);
+    }
+
+
+    public String getKunReading(char ch)
+    {
+        return kunReading.get(ch);
     }
 
     
-    private void loadFile(String name) throws Exception
+    private static void loadPartsFile(Map<String, String> map, String name) throws Exception
     {
         InputStream is = null;
         
         try
         {
-            is = this.getClass().getClassLoader().getResourceAsStream(name);
+            is = KanjiService.class.getClassLoader().getResourceAsStream(name);
             if(is == null) throw new Exception("Could not open file " + name);
             
             BufferedReader rd = new BufferedReader(new InputStreamReader(is, "UTF-8"));
@@ -67,5 +97,35 @@ public class KanjiService
         }
     }
     
-    
+
+    private static void loadReadingFile(Map<Character, String> map, String name) throws Exception
+    {
+        InputStream is = null;
+        
+        try
+        {
+            is = KanjiService.class.getClassLoader().getResourceAsStream(name);
+            if(is == null) throw new Exception("Could not open file " + name);
+            
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            
+            String line;
+            while((line = rd.readLine()) != null)
+            {
+                if(line.length() == 0 || line.startsWith("#")) continue;
+                
+                String kanji = line.substring(0, 1);
+                String reading = line.substring(3);
+                map.put(kanji.charAt(0), reading);
+            }
+        }
+        finally
+        {
+            if(is != null)
+            {
+                is.close();
+            }
+        }
+    }
+
 }

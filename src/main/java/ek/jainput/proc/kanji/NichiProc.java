@@ -5,13 +5,13 @@ public class NichiProc implements KanjiProc
     private static final String[] helpText = 
     {
         "罒 1  日 2  目 3  皿 4  白 s  自 j  血 c",
-        "貝 i  首 k  百 h"
+        "貝 i  具 g  首 k  百 h  頁 p"
     };
     
     @Override
     public char getKey1() 
     {
-        return 'n';
+        return 'a';
     }
     
     @Override
@@ -34,10 +34,12 @@ public class NichiProc implements KanjiProc
         case 's': return("白");
         case 'j': return("自");
         case 'c': return("血");
+
+        case 'i': return("貝");
+        case 'g': return("具");
+        case 'p': return("頁");
         
         case 'h': return("百");
-        case 'i': return("貝");
-        
         case 'k': return("首");
         
         }
