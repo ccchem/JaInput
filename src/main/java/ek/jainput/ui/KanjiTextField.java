@@ -17,6 +17,7 @@ import ek.jainput.proc.kanji.HitoProc;
 import ek.jainput.proc.kanji.KaneProc;
 import ek.jainput.proc.kanji.KanjiProc;
 import ek.jainput.proc.kanji.KiProc;
+import ek.jainput.proc.kanji.N4Proc;
 import ek.jainput.proc.kanji.NakaProc;
 import ek.jainput.proc.kanji.NichiProc;
 import ek.jainput.proc.kanji.OokiProc;
@@ -240,33 +241,26 @@ public class KanjiTextField extends JPanel implements KeyListener
         KanjiProc kp;
         
         // 人
-        kp = new HitoProc();
-        key1Map[kp.getKey1()] = kp;
-        
+        addKey1Map(new HitoProc());
         // 金
-        kp = new KaneProc();
-        key1Map[kp.getKey1()] = kp;
-        
+        addKey1Map(new KaneProc());
         // 日
-        kp = new NichiProc();
-        key1Map[kp.getKey1()] = kp;
-        
+        addKey1Map(new NichiProc());
         // 大
-        kp = new OokiProc();
-        key1Map[kp.getKey1()] = kp;
-        
+        addKey1Map(new OokiProc());
         // 木
-        kp = new KiProc();
-        key1Map[kp.getKey1()] = kp;
-
+        addKey1Map(new KiProc());
         // 竹
-        kp = new TakeProc();
-        key1Map[kp.getKey1()] = kp;
-
+        addKey1Map(new TakeProc());
         // 中
-        kp = new NakaProc();
-        key1Map[kp.getKey1()] = kp;
-                
+        addKey1Map(new NakaProc());
+        // 厶
+        addKey1Map(new N4Proc());
     }
     
+    
+    private void addKey1Map(KanjiProc kp)
+    {
+        key1Map[kp.getKey1()] = kp;
+    }
 }

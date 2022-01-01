@@ -23,7 +23,7 @@ public class KanjiService
     private KanjiService() throws Exception
     {
         partsMap = new HashMap<>(500);
-        loadPartsFile(partsMap, "g1.txt");
+        loadPartsFile(partsMap, "primary.txt");
         
         onReading = new HashMap<>(2_000);
         loadReadingFile(onReading, "on-1-8.txt");

@@ -5,7 +5,7 @@ public class KiProc implements KanjiProc
     private static final String[] helpText = 
     {
         "木 k  禾 2  本 -  未 m  末 s  米 b  来 u",
-        "東 t  束 8  林 h  森 r  耒 3"
+        "東 t  束 8  林 h  森 r  乗 n  耒 3"
     };
 
     @Override
@@ -41,6 +41,7 @@ public class KiProc implements KanjiProc
         case '8': return("束");
         case 't': return("東");
         
+        case 'n': return("乗");        
         
         }
         

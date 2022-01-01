@@ -16,7 +16,7 @@ import javax.swing.border.EmptyBorder;
 @SuppressWarnings("serial")
 public class MainWindow extends JFrame implements MainTextArea.KbModeListener
 {
-    private KanjiTextField canTxt;
+    private KanjiTextField2 canTxt;
     private MainTextArea textArea;
     
     private JLabel kbType;
@@ -33,7 +33,7 @@ public class MainWindow extends JFrame implements MainTextArea.KbModeListener
     
     private void initUI(UISettings cfg)
     {
-        canTxt = new KanjiTextField(cfg);
+        canTxt = new KanjiTextField2(cfg);
         //canTxt.setBorder(new CompoundBorder(new LineBorder(Color.GRAY), new EmptyBorder(10, 5, 10, 5)));
 
         textArea = new MainTextArea(cfg);
