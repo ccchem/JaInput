@@ -22,13 +22,14 @@ public class KanjiService
      */
     private KanjiService() throws Exception
     {
-        partsMap = new HashMap<>(500);
+        partsMap = new HashMap<>(2500);
         loadPartsFile(partsMap, "primary.txt");
+        loadPartsFile(partsMap, "secondary.txt");
         
-        onReading = new HashMap<>(2_000);
+        onReading = new HashMap<>(2500);
         loadReadingFile(onReading, "on-1-8.txt");
 
-        kunReading = new HashMap<>(2_000);
+        kunReading = new HashMap<>(2500);
         loadReadingFile(kunReading, "kun-1-8.txt");
     }
 

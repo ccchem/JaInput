@@ -5,7 +5,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.BoxLayout;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.CompoundBorder;
@@ -13,15 +12,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.text.DefaultEditorKit;
 
 import ek.jainput.proc.TextListener;
-import ek.jainput.proc.kanji.HitoProc;
-import ek.jainput.proc.kanji.KaneProc;
-import ek.jainput.proc.kanji.KanjiProc;
-import ek.jainput.proc.kanji.KiProc;
-import ek.jainput.proc.kanji.N4Proc;
-import ek.jainput.proc.kanji.NakaProc;
-import ek.jainput.proc.kanji.NichiProc;
-import ek.jainput.proc.kanji.OokiProc;
-import ek.jainput.proc.kanji.TakeProc;
 import ek.jainput.service.KanjiService;
 
 
@@ -137,13 +127,17 @@ public class KanjiTextField2 extends JPanel implements KeyListener
     {
         keyMap['`'] = '丶';
         keyMap['-'] = '一';
+        
         keyMap['+'] = '十';
+        keyMap['='] = '二';
+        
         keyMap['/'] = 'ノ';        
         
         keyMap['1'] = '人';
         keyMap['!'] = '彳';
         
-        keyMap['2'] = '.';
+        keyMap['2'] = '勹';
+        keyMap['@'] = '已';
         
         keyMap['3'] = '阝';
         keyMap['#'] = '井';
@@ -153,23 +147,33 @@ public class KanjiTextField2 extends JPanel implements KeyListener
         
         keyMap['5'] = '五';
         
-        keyMap['7'] = '示';
+        keyMap['7'] = '七';
         keyMap['&'] = '衣';
 
-        keyMap['8'] = '.';
+        keyMap['8'] = '几';
         keyMap['*'] = '米';
+        
+        keyMap['9'] = '九';
+        
+        keyMap['0'] = '園';
+                
+        keyMap['\''] = '弋';
+        keyMap['"'] = '廿';
+        
+        // --------------------------------------
         
         keyMap['a'] = '日';
         keyMap['A'] = '目';
 
         keyMap['b'] = '月';
-        keyMap['B'] = '几';
+        keyMap['B'] = '用';
         
         keyMap['c'] = '金';
-        keyMap['C'] = '子';
+        //keyMap['C'] = '子';
+        //keyMap['C'] = '子';
 
         keyMap['d'] = '力';
-        keyMap['D'] = '刀';
+        keyMap['D'] = '.';
 
         keyMap['e'] = 'ヨ';
         keyMap['E'] = '隹';
@@ -184,7 +188,7 @@ public class KanjiTextField2 extends JPanel implements KeyListener
         keyMap['H'] = '門';
 
         keyMap['i'] = '.';
-        keyMap['I'] = '.';
+        keyMap['I'] = '工';
 
         keyMap['j'] = '小';
         keyMap['J'] = '寸';
@@ -205,15 +209,15 @@ public class KanjiTextField2 extends JPanel implements KeyListener
         keyMap['O'] = '夕';
 
         keyMap['p'] = '尸';
-        keyMap['P'] = '.';
+        keyMap['P'] = '卩';
 
         keyMap['q'] = '手';
         keyMap['Q'] = '.';
 
         keyMap['r'] = '口';
-        keyMap['R'] = '園';
+        keyMap['R'] = '刀';
 
-        keyMap['s'] = '弓';
+        keyMap['s'] = '.';
         keyMap['S'] = '.';
 
         keyMap['t'] = '斤';
@@ -228,8 +232,8 @@ public class KanjiTextField2 extends JPanel implements KeyListener
         keyMap['w'] = '田';
         keyMap['W'] = '山';
         
-        keyMap['x'] = '父';
-        keyMap['X'] = '戈';        
+        keyMap['x'] = '乂';
+        keyMap['X'] = '丬';
         
         keyMap['y'] = '卜';
         keyMap['Y'] = '止';
