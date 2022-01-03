@@ -1,6 +1,6 @@
 package ek.jainput.proc.kanji;
 
-public interface KanjiProc
+public interface SecondKeyMap
 {
     public char getKey1();
     public String[] getHelp();    

@@ -2,8 +2,6 @@ package ek.jainput.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
@@ -16,7 +14,7 @@ import javax.swing.border.EmptyBorder;
 @SuppressWarnings("serial")
 public class MainWindow extends JFrame implements MainTextArea.KbModeListener
 {
-    private KanjiTextField2 canTxt;
+    private KanjiTextField canTxt;
     private MainTextArea textArea;
     
     private JLabel kbType;
@@ -33,7 +31,7 @@ public class MainWindow extends JFrame implements MainTextArea.KbModeListener
     
     private void initUI(UISettings cfg)
     {
-        canTxt = new KanjiTextField2(cfg);
+        canTxt = new KanjiTextField(cfg);
         //canTxt.setBorder(new CompoundBorder(new LineBorder(Color.GRAY), new EmptyBorder(10, 5, 10, 5)));
 
         textArea = new MainTextArea(cfg);

@@ -13,15 +13,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.text.DefaultEditorKit;
 
 import ek.jainput.proc.TextListener;
-import ek.jainput.proc.kanji.HitoProc;
-import ek.jainput.proc.kanji.KaneProc;
-import ek.jainput.proc.kanji.KanjiProc;
-import ek.jainput.proc.kanji.KiProc;
-import ek.jainput.proc.kanji.N4Proc;
-import ek.jainput.proc.kanji.NakaProc;
-import ek.jainput.proc.kanji.NichiProc;
-import ek.jainput.proc.kanji.OokiProc;
-import ek.jainput.proc.kanji.TakeProc;
+import ek.jainput.proc.kanji.SecondKeyMap;
+import ek.jainput.proc.kanji.SingleKeyMap;
+import ek.jainput.proc.kanji.TwoKeyMap;
 import ek.jainput.service.KanjiService;
 
 
@@ -34,7 +28,8 @@ public class KanjiTextField extends JPanel implements KeyListener
     
     private char key1 = 0;
     
-    private KanjiProc[] key1Map = new KanjiProc[255];
+    private SingleKeyMap sKeyMap = new SingleKeyMap();
+    private TwoKeyMap twoKeyMap = new TwoKeyMap();
     
     private TextListener textListener;
     
@@ -69,8 +64,6 @@ public class KanjiTextField extends JPanel implements KeyListener
         add(txtInput);
         add(lblHelp1);
         add(lblHelp2);
-        
-        initKey1Map();
     }
 
     
@@ -160,12 +153,21 @@ public class KanjiTextField extends JPanel implements KeyListener
         }
         else
         {
-            KanjiProc kp = key1Map[ch];
+            SecondKeyMap kp = twoKeyMap.get(ch);
             if(kp != null)
             {
                 key1 = ch;
-                lblHelp1.setText(kp.getHelp()[0]);
-                lblHelp2.setText(kp.getHelp()[1]);
+                String[] help = kp.getHelp();
+                if(help.length >= 1) lblHelp1.setText(help[0]);
+                if(help.length >= 2) lblHelp2.setText(kp.getHelp()[1]);
+            }
+            else
+            {
+                char kanji = sKeyMap.get(ch);
+                if(kanji != 0)
+                {
+                    insertAtCursor("" + kanji);
+                }
             }
         }
     }
@@ -188,7 +190,7 @@ public class KanjiTextField extends JPanel implements KeyListener
         else
         {
             String kanji = null;
-            KanjiProc kp = key1Map[key1];
+            SecondKeyMap kp = twoKeyMap.get(key1);
             if(kp != null)
             {
                 kanji = kp.getKanji(ch);
@@ -234,33 +236,5 @@ public class KanjiTextField extends JPanel implements KeyListener
         {
         }
     }
-
     
-    private void initKey1Map()
-    {
-        KanjiProc kp;
-        
-        // 人
-        addKey1Map(new HitoProc());
-        // 金
-        addKey1Map(new KaneProc());
-        // 日
-        addKey1Map(new NichiProc());
-        // 大
-        addKey1Map(new OokiProc());
-        // 木
-        addKey1Map(new KiProc());
-        // 竹
-        addKey1Map(new TakeProc());
-        // 中
-        addKey1Map(new NakaProc());
-        // 厶
-        addKey1Map(new N4Proc());
-    }
-    
-    
-    private void addKey1Map(KanjiProc kp)
-    {
-        key1Map[kp.getKey1()] = kp;
-    }
 }

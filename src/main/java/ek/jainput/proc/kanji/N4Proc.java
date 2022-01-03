@@ -1,6 +1,6 @@
 package ek.jainput.proc.kanji;
 
-public class N4Proc implements KanjiProc
+public class N4Proc implements SecondKeyMap
 {
     private static final String[] helpText = 
     {

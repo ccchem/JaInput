@@ -1,6 +1,8 @@
-package ek.jainput.proc.kanji;
+package ek.jainput.proc.kanji.k2;
 
-public class KiProc implements KanjiProc
+import ek.jainput.proc.kanji.SecondKeyMap;
+
+public class KiKMap implements SecondKeyMap
 {
     private static final String[] helpText = 
     {

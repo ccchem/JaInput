@@ -1,10 +1,10 @@
 package ek.jainput.proc.kanji;
 
-public class KaneProc implements KanjiProc
+public class KaneProc implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "介 2  今 i  会 4  合 a  全 z  食 t  金 c",
+        "介 2    会 4  合 a  全 z  ",
         "令 r  命 p  僉 x"
     };
     

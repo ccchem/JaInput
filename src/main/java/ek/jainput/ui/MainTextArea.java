@@ -8,6 +8,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.DefaultEditorKit;
@@ -175,6 +176,15 @@ public class MainTextArea extends JPanel
     {
         txtInput.replaceSelection("");
         txtInput.insert(str, txtInput.getCaretPosition());
+        /*
+        try
+        {
+            txtInput.getDocument().insertString(txtInput.getCaretPosition(), str, null);
+        }
+        catch(Exception ex)
+        {
+        }
+        */
     }
 
     
