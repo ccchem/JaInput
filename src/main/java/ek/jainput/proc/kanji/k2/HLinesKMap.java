@@ -6,13 +6,13 @@ public class HLinesKMap implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "冂 d  几 t  凵 u  匚 r  厂 1  广 2  疒 3"
+        "厂 1  广 2  疒 3  冂 d  几 t  凵 u  匚 r"
     };
     
     @Override
     public char getKey1() 
     {
-        return '[';
+        return '-';
     }
 
     @Override
@@ -30,8 +30,6 @@ public class HLinesKMap implements SecondKeyMap
         case '2': return("广");
         case '3': return("疒");
 
-        case 'd': return("冂");
-        case 't': return("几");
         case 'u': return("凵");
         case 'r': return("匚");
         }

@@ -26,8 +26,7 @@ public class SingleKeyMap
         
         keyMap['/'] = 'ノ';        
         
-        keyMap['1'] = '人';
-        keyMap['!'] = '彳';
+        keyMap['!'] = '人';
         
         keyMap['2'] = '勹';
         keyMap['@'] = '已';
@@ -40,8 +39,7 @@ public class SingleKeyMap
         
         keyMap['5'] = '五';
         
-        keyMap['7'] = '七';
-        keyMap['&'] = '衣';
+        keyMap['&'] = '匕';
 
         keyMap['8'] = '八';
         keyMap['*'] = '米';
@@ -57,8 +55,7 @@ public class SingleKeyMap
     
     private void initLetters()
     {
-        keyMap['a'] = '日';
-        keyMap['A'] = '目';
+        keyMap['A'] = '日';
 
         keyMap['b'] = '月';
         keyMap['B'] = '用';
@@ -108,8 +105,7 @@ public class SingleKeyMap
         keyMap['q'] = '手';
         keyMap['Q'] = '.';
 
-        keyMap['r'] = '口';
-        keyMap['R'] = '刀';
+        keyMap['R'] = '口';
 
         keyMap['s'] = '.';
         keyMap['S'] = '.';
@@ -123,8 +119,7 @@ public class SingleKeyMap
         keyMap['v'] = '女';
         keyMap['V'] = '火';
 
-        keyMap['w'] = '田';
-        keyMap['W'] = '山';
+        keyMap['W'] = '田';
         
         keyMap['x'] = '乂';
         keyMap['X'] = '丬';

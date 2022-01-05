@@ -1,11 +1,12 @@
-package ek.jainput.proc.kanji;
+package ek.jainput.proc.kanji.k2;
 
-public class N7Proc implements SecondKeyMap
+import ek.jainput.proc.kanji.SecondKeyMap;
+
+public class N7KMap implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "衣 i  衤 2  示 s  礻 1  _ s  _ b  _ u",
-        "_ t  _ 8  _ h  _ r  _ 3"
+        "匕 t  七 7  衣 i  示 s"
     };
 
     @Override
@@ -24,10 +25,10 @@ public class N7Proc implements SecondKeyMap
     {
         switch(ch)
         {
+        case '7': return("七");
+        case 't': return("匕");
         case 'i': return("衣");
-        case '1': return("礻");
         case 's': return("示");
-        case '2': return("衤");
         }
         
         return null;

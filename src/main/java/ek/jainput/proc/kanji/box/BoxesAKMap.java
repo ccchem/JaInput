@@ -1,14 +1,13 @@
-package ek.jainput.proc.kanji.k2;
+package ek.jainput.proc.kanji.box;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
-public class BoxesKMap implements SecondKeyMap
+public class BoxesAKMap implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "口 1  日 2  目 3  皿 4  耳 m  月 g  貝 k",
-        "園 0  国 z"
-        // 具 g  首 k  百 h  頁 p
+        "日 2  目 3  皿 4  耳 m  貝 k  首 b  頁 p"
+        // 具 g    百 h 
     };
     
     @Override
@@ -28,17 +27,15 @@ public class BoxesKMap implements SecondKeyMap
     {
         switch(ch)
         {
-        case '0': return("園");
-        case 'z': return("国");        
-        
-        case '1': return("口");
         case '2': return("日");
         case '3': return("目");
         case '4': return("皿");
 
-        case 'g': return("月");
-        case 'm': return("耳");
         case 'k': return("貝");
+        case 'm': return("耳");
+
+        case 'b': return("首");
+        case 'p': return("頁");
 
         }
         

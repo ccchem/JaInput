@@ -6,8 +6,8 @@ public class KiKMap implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "木 k  禾 2  本 -  未 m  末 s  米 b  来 u",
-        "東 t  束 8  林 h  森 r  乗 n  耒 3"
+        "木 k  禾 2  本 -  未 m  末 s  来 u",
+        "束 8  林 h  森 r  耒 3"
     };
 
     @Override
@@ -37,13 +37,9 @@ public class KiKMap implements SecondKeyMap
         case 'm': return("未");
         case 's': return("末");
         
-        case 'b': return("米");
         case 'u': return("来");
         
         case '8': return("束");
-        case 't': return("東");
-        
-        case 'n': return("乗");        
         
         }
         
