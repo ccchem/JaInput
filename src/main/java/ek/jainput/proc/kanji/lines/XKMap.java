@@ -6,7 +6,7 @@ public class XKMap implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "夂 f  攵 h  又 m  乂 x"
+        "夂 f  攵 h  又 m  乂 x  戈 '"
     };
     
     @Override
@@ -31,6 +31,8 @@ public class XKMap implements SecondKeyMap
         case 'm': return("又");
 
         case 'x': return("乂");
+        case '\'': return("戈");
+        
         }
         
         return null;

@@ -6,7 +6,7 @@ public class RoKMap implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "刀 k  力 c  方 h  口 o  舌 s"
+        "刀 k  力 c  方 h  豆 m  舌 s"
     };
     
     @Override
@@ -30,7 +30,7 @@ public class RoKMap implements SecondKeyMap
         case 'c': return("力");
         case 'h': return("方");
 
-        case 'o': return("口");
+        case 'm': return("豆");
         case 's': return("舌");
 
         }

@@ -1,18 +1,18 @@
-package ek.jainput.proc.kanji.box;
+package ek.jainput.proc.kanji.lines;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
-public class BoxesWKMap implements SecondKeyMap
+public class EKMap implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "田 2  曲 3  毎 m  車 k  乗 n"
+        "ヨ e  斗 t"
     };
     
     @Override
     public char getKey1() 
     {
-        return 'w';
+        return 'e';
     }
     
     @Override
@@ -26,14 +26,9 @@ public class BoxesWKMap implements SecondKeyMap
     {
         switch(ch)
         {
-        case '2': return("田");
-        case '3': return("曲");        
-
-        case 'm': return("毎");
-        case 'k': return("車");
+        case 'e': return("ヨ");
+        case 't': return("斗");
         
-        case 'n': return("乗");        
-
         }
         
         return null;

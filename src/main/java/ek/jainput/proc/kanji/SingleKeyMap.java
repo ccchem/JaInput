@@ -19,7 +19,9 @@ public class SingleKeyMap
     private void initOther()
     {
         keyMap['`'] = '丶';
-        keyMap['-'] = '一';
+        keyMap['~'] = '冫';
+        
+        keyMap['_'] = '一';
         
         keyMap['+'] = '十';
         keyMap['='] = '二';
@@ -48,7 +50,7 @@ public class SingleKeyMap
         
         keyMap['0'] = '園';
                 
-        keyMap['\''] = '弋';
+        keyMap['\''] = '道';
         keyMap['"'] = '廿';
     }
 
@@ -57,14 +59,13 @@ public class SingleKeyMap
     {
         keyMap['A'] = '日';
 
-        keyMap['b'] = '月';
-        keyMap['B'] = '用';
+        keyMap['B'] = '月';
         
         keyMap['c'] = '金';
         //keyMap['C'] = '子';
         //keyMap['C'] = '子';
 
-        keyMap['d'] = '力';
+        keyMap['d'] = '.';
         keyMap['D'] = '.';
 
         keyMap['e'] = 'ヨ';
@@ -81,11 +82,9 @@ public class SingleKeyMap
         keyMap['i'] = '.';
         keyMap['I'] = '工';
 
-        keyMap['j'] = '小';
-        keyMap['J'] = '寸';
+        keyMap['J'] = '小';
 
-        keyMap['k'] = '木';
-        keyMap['K'] = '禾';
+        keyMap['K'] = '木';
 
         keyMap['l'] = '心';
         keyMap['L'] = '儿';
@@ -127,7 +126,7 @@ public class SingleKeyMap
         keyMap['y'] = '卜';
         keyMap['Y'] = '止';
         
-        keyMap['z'] = '難';
+        keyMap['z'] = '漢';
         
     }
 

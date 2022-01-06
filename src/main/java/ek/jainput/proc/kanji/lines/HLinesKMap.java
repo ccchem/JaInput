@@ -1,4 +1,4 @@
-package ek.jainput.proc.kanji.k2;
+package ek.jainput.proc.kanji.lines;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
@@ -6,7 +6,7 @@ public class HLinesKMap implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "厂 1  广 2  疒 3  冂 d  几 t  凵 u  匚 r"
+        "亠 1  冖 2  宀 3  气 4  気 k"
     };
     
     @Override
@@ -26,12 +26,12 @@ public class HLinesKMap implements SecondKeyMap
     {
         switch(ch)
         {
-        case '1': return("厂");
-        case '2': return("广");
-        case '3': return("疒");
+        case '1': return("亠");
+        case '2': return("冖");
+        case '3': return("宀");
 
-        case 'u': return("凵");
-        case 'r': return("匚");
+        case '4': return("气");
+        case 'k': return("気");
         }
         
         return null;
