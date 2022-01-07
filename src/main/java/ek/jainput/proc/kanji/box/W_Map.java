@@ -2,11 +2,11 @@ package ek.jainput.proc.kanji.box;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
-public class BoxesWKMap implements SecondKeyMap
+public class W_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "田 2  曲 3  毎 m  車 k  乗 n"
+        "曲 3  毎 m  車 k  重 o  乗 n"
     };
     
     @Override
@@ -26,11 +26,11 @@ public class BoxesWKMap implements SecondKeyMap
     {
         switch(ch)
         {
-        case '2': return("田");
         case '3': return("曲");        
 
         case 'm': return("毎");
         case 'k': return("車");
+        case 'o': return("重");        
         
         case 'n': return("乗");        
 

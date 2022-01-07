@@ -1,34 +1,34 @@
-package ek.jainput.proc.kanji.k2;
+package ek.jainput.proc.kanji.lines;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
-public class N7KMap implements SecondKeyMap
+public class E_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "匕 t  七 7  衣 i  示 s"
+        "ヨ e  乍 n  隹 z"
     };
-
+    
     @Override
     public char getKey1() 
     {
-        return '7';
+        return 'e';
     }
     
+    @Override
     public String[] getHelp() 
-    { 
-        return helpText; 
+    {
+        return helpText;
     }
-    
+
     @Override
     public String getKanji(char ch)
     {
         switch(ch)
         {
-        case '7': return("七");
-        case 't': return("匕");
-        case 'i': return("衣");
-        case 's': return("示");
+        case 'e': return("ヨ");
+        case 'n': return("乍");
+        case 'z': return("隹");
         }
         
         return null;

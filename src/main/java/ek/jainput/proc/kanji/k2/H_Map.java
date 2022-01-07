@@ -1,18 +1,18 @@
-package ek.jainput.proc.kanji.lines;
+package ek.jainput.proc.kanji.k2;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
-public class TsuchiKMap implements SecondKeyMap
+public class H_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "干 2  王 3  平 b  半 n  生 s  羊 h"
+        "竹 2  年 n  午 g  牛 u"
     };
 
     @Override
     public char getKey1() 
     {
-        return 'g';
+        return 'h';
     }
     
     public String[] getHelp() 
@@ -25,14 +25,11 @@ public class TsuchiKMap implements SecondKeyMap
     {
         switch(ch)
         {
-        case '2': return("干");
-        case '3': return("王");
-
-        case 'b': return("平");
-        case 'n': return("半");        
-        case 's': return("生");
-        case 'h': return("羊");
+        case 'n': return("年");
+        case 'g': return("午");
+        case 'u': return("牛");
         
+        case '2': return("竹");
         }
         
         return null;

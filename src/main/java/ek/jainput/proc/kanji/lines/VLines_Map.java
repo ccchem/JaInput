@@ -2,38 +2,37 @@ package ek.jainput.proc.kanji.lines;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
-public class JKMap implements SecondKeyMap
+public class VLines_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "寸 `  勹 1  勿 3  豕 b  丁 t"
+        "工 i  丨 1  川 3  山 y  州 s"
     };
     
     @Override
     public char getKey1() 
     {
-        return 'j';
+        return ']';
     }
-    
+
     @Override
-    public String[] getHelp() 
+    public String[] getHelp()
     {
         return helpText;
     }
-
+    
     @Override
     public String getKanji(char ch)
     {
         switch(ch)
         {
-        case '`': return("寸");
+        case 'i': return("工");
+        case '1': return("丨");
+        case '3': return("川");
         
-        case '1': return("勹");
-        case '3': return("勿");
-        case 'b': return("豕");
-        
-        case 't': return("丁");
-        
+        case 'y': return("山");
+        case 's': return("州");        
+
         }
         
         return null;

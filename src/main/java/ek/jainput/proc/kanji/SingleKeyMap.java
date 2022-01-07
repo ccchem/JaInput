@@ -30,14 +30,13 @@ public class SingleKeyMap
         
         keyMap['!'] = '人';
         
-        keyMap['2'] = '勹';
-        keyMap['@'] = '已';
+        
+        keyMap['2'] = '火';
         
         keyMap['3'] = '阝';
         keyMap['#'] = '井';
 
         keyMap['4'] = '厶';
-        keyMap['$'] = '糸';
         
         keyMap['5'] = '五';
         
@@ -79,8 +78,8 @@ public class SingleKeyMap
         keyMap['h'] = '竹';
         keyMap['H'] = '門';
 
-        keyMap['i'] = '.';
-        keyMap['I'] = '工';
+        keyMap['i'] = '糸';
+        keyMap['I'] = '王';
 
         keyMap['J'] = '小';
 
@@ -89,14 +88,12 @@ public class SingleKeyMap
         keyMap['l'] = '心';
         keyMap['L'] = '儿';
 
-        keyMap['m'] = '水';
-        keyMap['M'] = '雨';
+        keyMap['M'] = '水';
 
         keyMap['n'] = '.';
         keyMap['N'] = '.';
 
-        keyMap['o'] = '大';
-        keyMap['O'] = '夕';
+        keyMap['O'] = '大';
 
         keyMap['p'] = '尸';
         keyMap['P'] = '卩';
@@ -109,8 +106,8 @@ public class SingleKeyMap
         keyMap['s'] = '.';
         keyMap['S'] = '.';
 
-        keyMap['t'] = '斤';
-        keyMap['T'] = '丁';
+        keyMap['t'] = '立';
+        keyMap['T'] = '夕';
 
         keyMap['u'] = '言';
         keyMap['U'] = '.';

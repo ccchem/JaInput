@@ -1,11 +1,13 @@
-package ek.jainput.proc.kanji;
+package ek.jainput.proc.kanji.k2;
 
-public class KaneProc implements SecondKeyMap
+import ek.jainput.proc.kanji.SecondKeyMap;
+
+public class C_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "介 2    会 4  合 a  全 z  ",
-        "令 r  命 p  僉 x"
+        "金 c  今 i  食 b",
+        "令 r  命 p"
     };
     
     @Override
@@ -25,20 +27,18 @@ public class KaneProc implements SecondKeyMap
     {
         switch(ch)
         {
-        case '2': return("介");
-        case '4': return("会");
-
-        case 'a': return("合");
         case 'c': return("金");
         case 'i': return("今");
+        case 'b': return("食");
+
+        
+        case 'a': return("合");
 
         case 'm': return("命");        
         
         case 'r': return("令");
-        case 't': return("食");
                 
         case 'x': return("僉");
-        case 'z': return("全");
         }
         
         return null;

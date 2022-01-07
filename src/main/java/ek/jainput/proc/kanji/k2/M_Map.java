@@ -1,18 +1,18 @@
-package ek.jainput.proc.kanji.lines;
+package ek.jainput.proc.kanji.k2;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
-public class XKMap implements SecondKeyMap
+public class M_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "夂 f  攵 h  又 m  乂 x  戈 '"
+        "夂 f  攵 h  又 m  雨 a"
     };
     
     @Override
     public char getKey1() 
     {
-        return 'x';
+        return 'm';
     }
     
     @Override
@@ -30,9 +30,8 @@ public class XKMap implements SecondKeyMap
         case 'h': return("攵");
         case 'm': return("又");
 
-        case 'x': return("乂");
-        case '\'': return("戈");
-        
+        case 'a': return("雨");
+
         }
         
         return null;

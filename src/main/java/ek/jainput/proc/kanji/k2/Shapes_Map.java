@@ -2,7 +2,7 @@ package ek.jainput.proc.kanji.k2;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
-public class ShapesKMap implements SecondKeyMap
+public class Shapes_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {

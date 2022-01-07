@@ -1,18 +1,19 @@
-package ek.jainput.proc.kanji.lines;
+package ek.jainput.proc.kanji.k2;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
-public class HLinesKMap implements SecondKeyMap
+public class S_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "亠 1  冖 2  宀 3  气 4  気 k"
+        "弓 3  已 2  巻 m  合 a"
+//        "令 r  命 p"
     };
     
     @Override
     public char getKey1() 
     {
-        return '-';
+        return 's';
     }
 
     @Override
@@ -26,12 +27,14 @@ public class HLinesKMap implements SecondKeyMap
     {
         switch(ch)
         {
-        case '1': return("亠");
-        case '2': return("冖");
-        case '3': return("宀");
+        case '2': return("已");
+        case '3': return("弓");
+        case 'm': return("巻");
 
-        case '4': return("气");
-        case 'k': return("気");
+        case 'a': return("合");
+
+        //case 'm': return("命");        
+        //case 'r': return("令");
         }
         
         return null;

@@ -1,21 +1,24 @@
 package ek.jainput.proc.kanji;
 
-import ek.jainput.proc.kanji.box.BoxesAKMap;
-import ek.jainput.proc.kanji.box.BoxesBKMap;
-import ek.jainput.proc.kanji.box.BoxesWKMap;
-import ek.jainput.proc.kanji.k2.HitoKMap;
-import ek.jainput.proc.kanji.k2.KiKMap;
-import ek.jainput.proc.kanji.k2.N7KMap;
-import ek.jainput.proc.kanji.k2.OokiKMap;
-import ek.jainput.proc.kanji.k2.RoKMap;
-import ek.jainput.proc.kanji.k2.ShapesKMap;
-import ek.jainput.proc.kanji.k2.TakeKMap;
-import ek.jainput.proc.kanji.lines.EKMap;
-import ek.jainput.proc.kanji.lines.HLinesKMap;
-import ek.jainput.proc.kanji.lines.JKMap;
-import ek.jainput.proc.kanji.lines.TsuchiKMap;
-import ek.jainput.proc.kanji.lines.VLinesKMap;
-import ek.jainput.proc.kanji.lines.XKMap;
+import ek.jainput.proc.kanji.box.A_Map;
+import ek.jainput.proc.kanji.box.B_Map;
+import ek.jainput.proc.kanji.box.W_Map;
+import ek.jainput.proc.kanji.k2.Hito_Map;
+import ek.jainput.proc.kanji.k2.K_Map;
+import ek.jainput.proc.kanji.k2.M_Map;
+import ek.jainput.proc.kanji.k2.N7_Map;
+import ek.jainput.proc.kanji.k2.O_Map;
+import ek.jainput.proc.kanji.k2.R_Map;
+import ek.jainput.proc.kanji.k2.S_Map;
+import ek.jainput.proc.kanji.k2.Shapes_Map;
+import ek.jainput.proc.kanji.k2.X_Map;
+import ek.jainput.proc.kanji.k2.C_Map;
+import ek.jainput.proc.kanji.k2.H_Map;
+import ek.jainput.proc.kanji.lines.E_Map;
+import ek.jainput.proc.kanji.lines.HLines_Map;
+import ek.jainput.proc.kanji.lines.J_Map;
+import ek.jainput.proc.kanji.lines.G_Map;
+import ek.jainput.proc.kanji.lines.VLines_Map;
 
 public class TwoKeyMap
 {
@@ -35,40 +38,40 @@ public class TwoKeyMap
     private void initKeyMap()
     {
         // [ = 厂, 冂
-        addKeyMap(new ShapesKMap());
+        addKeyMap(new Shapes_Map());
 
         // Lines
-        addKeyMap(new HLinesKMap());
-        addKeyMap(new VLinesKMap());
-        addKeyMap(new XKMap());
-        addKeyMap(new EKMap());
-        addKeyMap(new JKMap());
+        addKeyMap(new HLines_Map());
+        addKeyMap(new VLines_Map());
         
         // 1 = 人
-        addKeyMap(new HitoKMap());
-        // 金
-        //addKey1Map(new KaneProc());
-        
-        // 日, 目, 皿
-        addKeyMap(new BoxesAKMap());
-        addKeyMap(new BoxesBKMap());
-        addKeyMap(new BoxesWKMap());
+        addKeyMap(new Hito_Map());
 
-        // g = 土
-        addKeyMap(new TsuchiKMap());
-        // o = 大
-        addKeyMap(new OokiKMap());
-        // k = 木
-        addKeyMap(new KiKMap());
-        // h = 竹
-        addKeyMap(new TakeKMap());
+        addKeyMap(new A_Map());
+        addKeyMap(new B_Map());
+        addKeyMap(new C_Map());
+        addKeyMap(new E_Map());
+        addKeyMap(new G_Map());
+
+        addKeyMap(new H_Map());
+        addKeyMap(new J_Map());
+        addKeyMap(new K_Map());
+
+        addKeyMap(new M_Map());
+
+        addKeyMap(new O_Map());
+        addKeyMap(new R_Map());
+        addKeyMap(new S_Map());
+
+        addKeyMap(new W_Map());
+        addKeyMap(new X_Map());
+
+        
         // 厶
         //addKey1Map(new N4Proc());
         
-        // r =
-        addKeyMap(new RoKMap());
         
-        addKeyMap(new N7KMap());
+        addKeyMap(new N7_Map());
     }
     
     
