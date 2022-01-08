@@ -1,4 +1,4 @@
-package ek.jainput.proc.kanji.box;
+package ek.jainput.proc.kanji.k2;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
@@ -6,7 +6,7 @@ public class W_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "曲 3  毎 m  車 k  重 o  乗 n"
+        "曲 3  毎 m  車 k  重 o"
     };
     
     @Override
@@ -30,9 +30,7 @@ public class W_Map implements SecondKeyMap
 
         case 'm': return("毎");
         case 'k': return("車");
-        case 'o': return("重");        
-        
-        case 'n': return("乗");        
+        case 'o': return("重");
 
         }
         

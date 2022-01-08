@@ -6,13 +6,13 @@ public class VLines_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "工 i  丨 1  川 3  山 y  州 s"
+        "工 i  川 3  山 y  州 s"
     };
     
     @Override
     public char getKey1() 
     {
-        return ']';
+        return '\\';
     }
 
     @Override
@@ -27,7 +27,6 @@ public class VLines_Map implements SecondKeyMap
         switch(ch)
         {
         case 'i': return("工");
-        case '1': return("丨");
         case '3': return("川");
         
         case 'y': return("山");

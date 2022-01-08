@@ -6,8 +6,7 @@ public class O_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "犬 i  天 t  矢 y  失 s  央 8",
-        "夫 -  夬 7  春 h"
+        "犬 i  天 t  夫 o  矢 y  失 s"
     };
     
     @Override
@@ -28,20 +27,12 @@ public class O_Map implements SecondKeyMap
         switch(ch)
         {
         case 'i': return("犬");
-        
         case 't': return("天");
-
-        case '7': return("夬");
-        case '8': return("央");
-        
+        case 'o': return("夫");
 
         case 'y': return("矢");
         case 's': return("失");        
-        
-        case '-': return("夫");
-        
-        case 'h': return("春");        
-        
+
         }
         
         return null;

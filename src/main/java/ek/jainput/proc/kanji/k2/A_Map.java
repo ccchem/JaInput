@@ -1,4 +1,4 @@
-package ek.jainput.proc.kanji.box;
+package ek.jainput.proc.kanji.k2;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 

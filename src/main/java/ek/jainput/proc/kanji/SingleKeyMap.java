@@ -31,7 +31,7 @@ public class SingleKeyMap
         keyMap['!'] = '人';
         
         
-        keyMap['2'] = '火';
+        keyMap['@'] = '火';
         
         keyMap['3'] = '阝';
         keyMap['#'] = '井';
@@ -76,7 +76,7 @@ public class SingleKeyMap
         keyMap['G'] = '土';
 
         keyMap['h'] = '竹';
-        keyMap['H'] = '門';
+        keyMap['H'] = '牛';
 
         keyMap['i'] = '糸';
         keyMap['I'] = '王';
@@ -112,8 +112,7 @@ public class SingleKeyMap
         keyMap['u'] = '言';
         keyMap['U'] = '.';
 
-        keyMap['v'] = '女';
-        keyMap['V'] = '火';
+        keyMap['V'] = '女';
 
         keyMap['W'] = '田';
         

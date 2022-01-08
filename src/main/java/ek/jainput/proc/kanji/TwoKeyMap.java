@@ -1,19 +1,23 @@
 package ek.jainput.proc.kanji;
 
-import ek.jainput.proc.kanji.box.A_Map;
-import ek.jainput.proc.kanji.box.B_Map;
-import ek.jainput.proc.kanji.box.W_Map;
 import ek.jainput.proc.kanji.k2.Hito_Map;
 import ek.jainput.proc.kanji.k2.K_Map;
 import ek.jainput.proc.kanji.k2.M_Map;
 import ek.jainput.proc.kanji.k2.N7_Map;
+import ek.jainput.proc.kanji.k2.N_Map;
 import ek.jainput.proc.kanji.k2.O_Map;
 import ek.jainput.proc.kanji.k2.R_Map;
 import ek.jainput.proc.kanji.k2.S_Map;
 import ek.jainput.proc.kanji.k2.Shapes_Map;
+import ek.jainput.proc.kanji.k2.V_Map;
+import ek.jainput.proc.kanji.k2.W_Map;
 import ek.jainput.proc.kanji.k2.X_Map;
+import ek.jainput.proc.kanji.k2.A_Map;
+import ek.jainput.proc.kanji.k2.B_Map;
 import ek.jainput.proc.kanji.k2.C_Map;
+import ek.jainput.proc.kanji.k2.F_Map;
 import ek.jainput.proc.kanji.k2.H_Map;
+import ek.jainput.proc.kanji.k2.Hito2_Map;
 import ek.jainput.proc.kanji.lines.E_Map;
 import ek.jainput.proc.kanji.lines.HLines_Map;
 import ek.jainput.proc.kanji.lines.J_Map;
@@ -44,13 +48,14 @@ public class TwoKeyMap
         addKeyMap(new HLines_Map());
         addKeyMap(new VLines_Map());
         
-        // 1 = 人
         addKeyMap(new Hito_Map());
+        addKeyMap(new Hito2_Map());
 
         addKeyMap(new A_Map());
         addKeyMap(new B_Map());
         addKeyMap(new C_Map());
         addKeyMap(new E_Map());
+        addKeyMap(new F_Map());
         addKeyMap(new G_Map());
 
         addKeyMap(new H_Map());
@@ -58,11 +63,13 @@ public class TwoKeyMap
         addKeyMap(new K_Map());
 
         addKeyMap(new M_Map());
-
+        addKeyMap(new N_Map());
+        
         addKeyMap(new O_Map());
         addKeyMap(new R_Map());
         addKeyMap(new S_Map());
 
+        addKeyMap(new V_Map());
         addKeyMap(new W_Map());
         addKeyMap(new X_Map());
 

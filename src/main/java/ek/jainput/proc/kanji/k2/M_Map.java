@@ -6,7 +6,7 @@ public class M_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "夂 f  攵 h  又 m  雨 a"
+        "夂 f  攵 h  又 m  雨 a  門 k"
     };
     
     @Override
@@ -31,7 +31,8 @@ public class M_Map implements SecondKeyMap
         case 'm': return("又");
 
         case 'a': return("雨");
-
+        case 'k': return("門");
+        
         }
         
         return null;
