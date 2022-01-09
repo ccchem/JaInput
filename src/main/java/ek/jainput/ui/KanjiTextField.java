@@ -101,30 +101,45 @@ public class KanjiTextField extends JPanel implements KeyListener
     {
         if(key1 != 0) return;
         
-        if(e.getKeyCode() == KeyEvent.VK_F3) 
+        switch(e.getKeyCode())
         {
-            String txt = txtInput.getSelectedText();
-            if(txt == null || txt.isEmpty())
-            {
-                txt = txtInput.getText();
-            }            
-            if(txt == null || txt.isEmpty()) return;
-            
-            if(txt.length() == 1)
-            {
-                showReading(txt.charAt(0));
-            }
-            else
-            {
-                showReading(txt.charAt(txt.length()-1));
-            }
+        case KeyEvent.VK_F2:
+            showYazawaRef(getSelectedChar());
+            break;
+        case KeyEvent.VK_F3:
+            showReading(getSelectedChar());
+            break;
         }
+
+            
     }
 
     
+    private char getSelectedChar()
+    {
+        String txt = txtInput.getSelectedText();
+        if(txt == null || txt.isEmpty())
+        {
+            txt = txtInput.getText();
+        }
+        
+        if(txt == null || txt.isEmpty()) return 0;
+        
+        if(txt.length() == 1)
+        {
+            return txt.charAt(0);
+        }
+        else
+        {
+            return txt.charAt(txt.length()-1);
+        }
+    }
+    
+    
     private void showReading(char kanji)
     {
-        System.out.println(kanji);
+        if(kanji == 0) return;
+        
         KanjiService srv = KanjiService.getInstance();
         
         String kunR = srv.getKunReading(kanji);
@@ -139,6 +154,21 @@ public class KanjiTextField extends JPanel implements KeyListener
             lblHelp2.setText(onR);
         }
     }
+
+    private void showYazawaRef(char kanji)
+    {
+        if(kanji == 0) return;
+        
+        KanjiService srv = KanjiService.getInstance();
+        
+        String ref = srv.getYazawaRef(kanji);
+        if(ref!= null)
+        {
+            lblHelp1.setText("Yazawa: " + ref);
+            lblHelp2.setText("");
+        }
+    }
+
     
     private void processFirstKey(char ch)
     {

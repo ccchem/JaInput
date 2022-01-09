@@ -6,7 +6,7 @@ public class C_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "金 c  今 i  食 b  子 k",
+        "金 c  今 i  食 b  合 a",
         "令 r  命 p"
     };
     
@@ -31,7 +31,7 @@ public class C_Map implements SecondKeyMap
         case 'i': return("今");
         case 'b': return("食");
 
-        case 'k': return("子");
+        case 'a': return("合");
 
         //case 'a': return("合");
         case 'r': return("令");

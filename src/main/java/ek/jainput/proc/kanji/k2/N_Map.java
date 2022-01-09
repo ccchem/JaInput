@@ -6,7 +6,7 @@ public class N_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "几 1  鳥 t"
+        "几 1  鳥 t  色 i"
     };
     
     @Override
@@ -27,9 +27,9 @@ public class N_Map implements SecondKeyMap
         switch(ch)
         {
         case '1': return("几");
-
         case 't': return("鳥");
-
+        case 'i': return("色");
+        
         }
         
         return null;

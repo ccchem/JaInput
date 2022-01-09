@@ -13,8 +13,11 @@ public class KanjiService
     
     // key = parts, value = kanji
     private Map<String, String> partsMap;
+    
     private Map<Character, String> onReading;
     private Map<Character, String> kunReading;
+    
+    private Map<Character, String> yazawaRef;
     
     /**
      * Private constructor. Use getInstance() instead.
@@ -31,6 +34,9 @@ public class KanjiService
 
         kunReading = new HashMap<>(2500);
         loadReadingFile(kunReading, "kun-1-8.txt");
+        
+        yazawaRef = new HashMap<>(1100);
+        loadYazawaRefs(yazawaRef, "yazawa.txt");
     }
 
     
@@ -65,6 +71,12 @@ public class KanjiService
     public String getKunReading(char ch)
     {
         return kunReading.get(ch);
+    }
+
+    
+    public String getYazawaRef(char ch)
+    {
+        return yazawaRef.get(ch);
     }
 
     
@@ -128,5 +140,36 @@ public class KanjiService
             }
         }
     }
-
+    
+    
+    private static void loadYazawaRefs(Map<Character, String> map, String name) throws Exception
+    {
+        InputStream is = null;
+        
+        try
+        {
+            is = KanjiService.class.getClassLoader().getResourceAsStream(name);
+            if(is == null) throw new Exception("Could not open file " + name);
+            
+            BufferedReader rd = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+            
+            String line;
+            while((line = rd.readLine()) != null)
+            {
+                if(line.length() == 0 || line.startsWith("#")) continue;
+                
+                String kanji = line.substring(0, 1);
+                String ref = line.substring(2);
+                map.put(kanji.charAt(0), ref);
+            }
+        }
+        finally
+        {
+            if(is != null)
+            {
+                is.close();
+            }
+        }
+    }
+    
 }

@@ -33,7 +33,7 @@ public class SingleKeyMap
         
         keyMap['@'] = '火';
         
-        keyMap['3'] = '阝';
+        keyMap['3'] = '.';
         keyMap['#'] = '井';
 
         keyMap['4'] = '厶';
@@ -45,9 +45,10 @@ public class SingleKeyMap
         keyMap['8'] = '八';
         keyMap['*'] = '米';
         
-        keyMap['9'] = '九';
-        
+        keyMap['9'] = '九';        
         keyMap['0'] = '園';
+        
+        keyMap['{'] = '斤';
                 
         keyMap['\''] = '道';
         keyMap['"'] = '廿';
@@ -103,8 +104,7 @@ public class SingleKeyMap
 
         keyMap['R'] = '口';
 
-        keyMap['s'] = '.';
-        keyMap['S'] = '.';
+        keyMap['S'] = '阝';
 
         keyMap['t'] = '立';
         keyMap['T'] = '夕';

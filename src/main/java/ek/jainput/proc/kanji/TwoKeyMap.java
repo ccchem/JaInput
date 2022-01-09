@@ -8,7 +8,8 @@ import ek.jainput.proc.kanji.k2.N_Map;
 import ek.jainput.proc.kanji.k2.O_Map;
 import ek.jainput.proc.kanji.k2.R_Map;
 import ek.jainput.proc.kanji.k2.S_Map;
-import ek.jainput.proc.kanji.k2.Shapes_Map;
+import ek.jainput.proc.kanji.k2.T_Map;
+import ek.jainput.proc.kanji.k2.LB_Map;
 import ek.jainput.proc.kanji.k2.V_Map;
 import ek.jainput.proc.kanji.k2.W_Map;
 import ek.jainput.proc.kanji.k2.X_Map;
@@ -42,7 +43,7 @@ public class TwoKeyMap
     private void initKeyMap()
     {
         // [ = 厂, 冂
-        addKeyMap(new Shapes_Map());
+        addKeyMap(new LB_Map());
 
         // Lines
         addKeyMap(new HLines_Map());
@@ -68,6 +69,7 @@ public class TwoKeyMap
         addKeyMap(new O_Map());
         addKeyMap(new R_Map());
         addKeyMap(new S_Map());
+        addKeyMap(new T_Map());
 
         addKeyMap(new V_Map());
         addKeyMap(new W_Map());

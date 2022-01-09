@@ -6,7 +6,7 @@ public class S_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "弓 3  已 2"
+        "耳 m  弓 y  門 k"
 //        "令 r  命 p"
     };
     
@@ -27,9 +27,11 @@ public class S_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case '2': return("已");
-        case '3': return("弓");
+        case 'm': return("耳");
+        case 'y': return("弓");
 
+        case 'k': return("門");
+        
         //case 'm': return("命");        
         //case 'r': return("令");
         }
