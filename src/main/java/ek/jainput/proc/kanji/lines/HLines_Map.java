@@ -6,7 +6,7 @@ public class HLines_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "亠 1  冖 2  宀 3  气 4  気 k  彡 /"
+        "宀 3  气 4  気 k  彡 /"
     };
     
     @Override
@@ -26,8 +26,6 @@ public class HLines_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case '1': return("亠");
-        case '2': return("冖");
         case '3': return("宀");
 
         case '4': return("气");

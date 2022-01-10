@@ -32,9 +32,10 @@ public class HiraganaKeyProcessor implements KeyProcessor
         case 'e': do_e(); break;
         case 'o': do_o(); break;
 
-        case 'A': cb.onText("ゃ"); break;
-        case 'U': cb.onText("ゅ"); break;
-        case 'O': cb.onText("ょ"); break;
+        case 'A': cb.onText("ぁ"); break;
+        case 'Y': do_Y(); break;
+        case 'U': do_U(); break;
+        case 'O': do_O(); break;
         
         case '-': cb.onText("ー"); break;
         
@@ -59,46 +60,27 @@ public class HiraganaKeyProcessor implements KeyProcessor
         case 'W': cb.onText("を"); break;
         
         case 'k': key1 = ch; break;
-        case 'K': key1 = Character.toLowerCase(ch); break;
         case 'g': key1 = ch; break;
-        case 'G': key1 = Character.toLowerCase(ch); break;
 
         case 's': key1 = ch; break;
-        case 'S': key1 = Character.toLowerCase(ch); break;
         case 'z': key1 = ch; break;
-        case 'Z': key1 = Character.toLowerCase(ch); break;
         case 'j': key1 = ch; break;
-        case 'J': key1 = Character.toLowerCase(ch); break;
 
         case 't': key1 = ch; break;
-        case 'T': cb.onText("っ"); break;
+        case 'T': key1= ' '; cb.onText("っ"); break;
         case 'd': key1 = ch; break;
-        case 'D': key1 = Character.toLowerCase(ch); break;
 
         case 'n': key1 = ch; break;
-        case 'N': cb.onText("ん"); break;
+        case 'N': key1= ' '; cb.onText("ん"); break;
         case 'm': key1 = ch; break;
-        case 'M': key1 = Character.toLowerCase(ch); break;
         
         case 'h': key1 = ch; break;
-        case 'H': key1 = Character.toLowerCase(ch); break;
         case 'b': key1 = ch; break;
-        case 'B': key1 = Character.toLowerCase(ch); break;
         case 'p': key1 = ch; break;
-        case 'P': key1 = Character.toLowerCase(ch); break;
 
         case 'y': key1 = ch; break;
-        case 'Y': key1 = Character.toLowerCase(ch); break;
         
         case 'r': key1 = ch; break;
-        case 'R': key1 = Character.toLowerCase(ch); break;
-
-        // Small
-        case 'x': key1 = ch; break;
-        case 'X': key1 = Character.toLowerCase(ch); break;
-        case 'q': key1 = ch; break;
-        case 'Q': key1 = Character.toLowerCase(ch); break;
-
         }
     }
     
@@ -106,9 +88,6 @@ public class HiraganaKeyProcessor implements KeyProcessor
     {
         switch(key1)
         {
-        case ' ': cb.onText("あ"); break;
-        case 'q': cb.onText("ぁ"); break;    // Small
-        
         case 'k': cb.onText("か"); break;
         case 'g': cb.onText("が"); break;
         
@@ -132,6 +111,22 @@ public class HiraganaKeyProcessor implements KeyProcessor
         key1 = ' ';
     }
 
+    private void do_Y()
+    {
+        switch(key1)
+        {
+        case 'k': cb.onText("きゃ"); break;
+        
+        case 's': cb.onText("しゃ"); break;
+        case 'j': cb.onText("じゃ"); break;
+        
+        case 'r': cb.onText("りゃ"); break;
+        
+        case ' ': cb.onText("ゃ"); break;
+        }
+        
+        key1 = ' ';
+    }
     
     private void do_i()
     {
@@ -188,6 +183,23 @@ public class HiraganaKeyProcessor implements KeyProcessor
 
         case 'y': cb.onText("ゆ"); break;
         case 'r': cb.onText("る"); break;
+        }
+        
+        key1 = ' ';
+    }
+
+    private void do_U()
+    {
+        switch(key1)
+        {
+        case 'k': cb.onText("きゅ"); break;
+        
+        case 's': cb.onText("しゅ"); break;
+        case 'j': cb.onText("じゅ"); break;
+        
+        case 'r': cb.onText("りゅ"); break;        
+        
+        case ' ': cb.onText("ゅ"); break;
         }
         
         key1 = ' ';
@@ -252,5 +264,24 @@ public class HiraganaKeyProcessor implements KeyProcessor
         }
         
         key1 = ' ';
-    }    
+    }
+    
+    
+    private void do_O()
+    {
+        switch(key1)
+        {
+        case 'k': cb.onText("きょ"); break;
+
+        case 's': cb.onText("しょ"); break;
+        case 'j': cb.onText("じょ"); break;
+        
+        case 'r': cb.onText("りょ"); break;
+        
+        case ' ': cb.onText("ょ"); break;
+        }
+        
+        key1 = ' ';
+    }
+
 }

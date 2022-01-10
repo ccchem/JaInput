@@ -96,8 +96,7 @@ public class SingleKeyMap
 
         keyMap['O'] = '大';
 
-        keyMap['p'] = '尸';
-        keyMap['P'] = '卩';
+        keyMap['P'] = '尸';
 
         keyMap['q'] = '手';
         keyMap['Q'] = '.';

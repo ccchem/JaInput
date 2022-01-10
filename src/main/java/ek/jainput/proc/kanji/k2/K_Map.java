@@ -6,7 +6,7 @@ public class K_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "禾 2  耒 3  未 m  末 s  乗 n"
+        "禾 2  乗 n"
     };
 
     @Override
@@ -26,11 +26,7 @@ public class K_Map implements SecondKeyMap
         switch(ch)
         {
         case '2': return("禾");
-        case '3': return("耒");        
 
-        case 'm': return("未");
-        case 's': return("末");
-        
         case 'n': return("乗");
         
         }

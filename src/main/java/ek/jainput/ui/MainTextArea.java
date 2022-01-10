@@ -8,13 +8,13 @@ import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
 import javax.swing.KeyStroke;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.DefaultEditorKit;
 
 import ek.jainput.proc.HiraganaKeyProcessor;
 import ek.jainput.proc.KanjiKeyProcessor;
+import ek.jainput.proc.KatakanaKeyProcessor;
 import ek.jainput.proc.KeyProcessor;
 import ek.jainput.service.KanjiService;
 
@@ -36,6 +36,7 @@ public class MainTextArea extends JPanel
     
     private KbModeListener kbModeListener;
     private HiraganaKeyProcessor hiraProc;
+    private KatakanaKeyProcessor kataProc;
     private KanjiKeyProcessor kanjiProc;
     private KeyProcessor keyProc;
     
@@ -83,6 +84,7 @@ public class MainTextArea extends JPanel
         add(lblHelp2);
 
         hiraProc = new HiraganaKeyProcessor(this);
+        kataProc = new KatakanaKeyProcessor(this);
         kanjiProc = new KanjiKeyProcessor(this);
         keyProc = hiraProc;
     }
@@ -117,7 +119,7 @@ public class MainTextArea extends JPanel
                 break;
             // Ctrl-K
             case 11:
-                keyProc = hiraProc;
+                keyProc = kataProc;
                 if(kbModeListener != null) kbModeListener.onSetKbMode(KbMode.Katakana);
                 break;
             }

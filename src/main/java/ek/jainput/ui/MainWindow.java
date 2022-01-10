@@ -84,9 +84,15 @@ public class MainWindow extends JFrame implements MainTextArea.KbModeListener
     {
         switch(mode)
         {
-        case Kanji: kbType.setText("漢字"); break;
-        case Hiragana: kbType.setText("あ"); break;
-        case Katakana: kbType.setText("カ"); break;
+        case Kanji: 
+            kbType.setText("漢字"); 
+            break;
+        case Hiragana: 
+            kbType.setText("あ"); 
+            break;
+        case Katakana: 
+            kbType.setText("カ"); 
+            break;
         }
     }
     
