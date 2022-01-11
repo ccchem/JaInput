@@ -107,10 +107,6 @@ public class MainWindow extends JFrame
         mainPanel.add(kbType, BorderLayout.SOUTH);
         
         getContentPane().add(mainPanel);
-
-        setSize(600, 400);
-        // Center on screen
-        setLocationRelativeTo(null);
     }
 
     
