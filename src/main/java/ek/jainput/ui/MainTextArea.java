@@ -1,12 +1,13 @@
 package ek.jainput.ui;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.BoxLayout;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.KeyStroke;
 import javax.swing.border.EmptyBorder;
@@ -16,7 +17,6 @@ import ek.jainput.proc.HiraganaKeyProcessor;
 import ek.jainput.proc.KanjiKeyProcessor;
 import ek.jainput.proc.KatakanaKeyProcessor;
 import ek.jainput.proc.KeyProcessor;
-import ek.jainput.service.KanjiService;
 
 
 @SuppressWarnings("serial")
@@ -25,16 +25,16 @@ public class MainTextArea extends JPanel
 {
     public static enum KbMode { Hiragana, Katakana, Kanji };
     
-    public static interface KbModeListener
+    public static interface Callback
     {
         public void onSetKbMode(KbMode mode);
+        public void onShowReading(char kanji);
+        public void onClearHelpLabel();
     }
     
     private JTextArea txtInput;
-    private JLabel lblHelp1;
-    private JLabel lblHelp2;
     
-    private KbModeListener kbModeListener;
+    private Callback callback;
     private HiraganaKeyProcessor hiraProc;
     private KatakanaKeyProcessor kataProc;
     private KanjiKeyProcessor kanjiProc;
@@ -43,15 +43,12 @@ public class MainTextArea extends JPanel
     
     public MainTextArea(UISettings cfg)
     {
-        super();
-        setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+        super(new BorderLayout());
         setBackground(cfg.labelBG);
 
         txtInput = new JTextArea();
 
-        txtInput.setColumns(30);
-        txtInput.setRows(3);
-        txtInput.setLineWrap(true);
+        txtInput.setLineWrap(false);
         txtInput.setFont(cfg.textFont);
 
         txtInput.setCaretColor(Color.GRAY);
@@ -64,24 +61,10 @@ public class MainTextArea extends JPanel
         
         txtInput.getActionMap().put(DefaultEditorKit.deletePrevCharAction, new CustomTextActions.DeletePrevCharAction());
         txtInput.addKeyListener(this);
-
+        txtInput.setBorder(new EmptyBorder(5, 5, 5, 5));
         txtInput.setAlignmentX(LEFT_ALIGNMENT);
         
-        lblHelp1 = new JLabel();
-        lblHelp1.setFont(cfg.helpFont);
-        lblHelp1.setForeground(cfg.labelFG);
-        lblHelp1.setBorder(new EmptyBorder(5, 5, 5, 5));
-        lblHelp1.setAlignmentX(LEFT_ALIGNMENT);
-
-        lblHelp2 = new JLabel();
-        lblHelp2.setFont(cfg.helpFont);
-        lblHelp2.setForeground(cfg.labelFG);
-        lblHelp2.setBorder(new EmptyBorder(0, 5, 5, 5));
-        lblHelp2.setAlignmentX(LEFT_ALIGNMENT);
-
-        add(txtInput);
-        add(lblHelp1);
-        add(lblHelp2);
+        add(createScrollPane());
 
         hiraProc = new HiraganaKeyProcessor(this);
         kataProc = new KatakanaKeyProcessor(this);
@@ -90,9 +73,26 @@ public class MainTextArea extends JPanel
     }
     
     
-    public void setKbModeListener(KbModeListener listener)
+    public void setCallback(Callback cb)
     {
-        this.kbModeListener = listener;
+        this.callback = cb;
+    }
+    
+    
+    private JScrollPane createScrollPane()
+    {
+        Color scrollBg = new Color(30, 30, 30);
+        JScrollPane scrollPane = new JScrollPane(txtInput);
+        scrollPane.setBorder(new EmptyBorder(0, 0, 0, 0));
+        scrollPane.getVerticalScrollBar().setBackground(scrollBg);
+        scrollPane.getHorizontalScrollBar().setBackground(scrollBg);
+
+        scrollPane.getVerticalScrollBar().setUI(new MyScrollBarUI());
+        scrollPane.getHorizontalScrollBar().setUI(new MyScrollBarUI());
+        
+        scrollPane.setBackground(Color.DARK_GRAY);
+
+        return scrollPane;
     }
     
     
@@ -110,17 +110,17 @@ public class MainTextArea extends JPanel
             // Ctrl-J
             case 10:
                 keyProc = kanjiProc;
-                if(kbModeListener != null) kbModeListener.onSetKbMode(KbMode.Kanji);
+                if(callback != null) callback.onSetKbMode(KbMode.Kanji);
                 break;
             // Ctrl-H
             case 8:
                 keyProc = hiraProc;
-                if(kbModeListener != null) kbModeListener.onSetKbMode(KbMode.Hiragana);
+                if(callback != null) callback.onSetKbMode(KbMode.Hiragana);
                 break;
             // Ctrl-K
             case 11:
                 keyProc = kataProc;
-                if(kbModeListener != null) kbModeListener.onSetKbMode(KbMode.Katakana);
+                if(callback != null) callback.onSetKbMode(KbMode.Katakana);
                 break;
             }
         }
@@ -129,7 +129,7 @@ public class MainTextArea extends JPanel
             // Esc
             if(ch == 27)
             {
-                clearHelpLabel();
+                callback.onClearHelpLabel();
                 //key1 = 0;
             }
             else
@@ -192,27 +192,11 @@ public class MainTextArea extends JPanel
     
     private void showReading(char kanji)
     {
-        System.out.println(kanji);
-        KanjiService srv = KanjiService.getInstance();
-        
-        String kunR = srv.getKunReading(kanji);
-        if(kunR != null)
+        if(callback != null)
         {
-            lblHelp1.setText(kunR);
-        }
-
-        String onR = srv.getOnReading(kanji);
-        if(onR != null)
-        {
-            lblHelp2.setText(onR);
+            callback.onShowReading(kanji);
         }
     }
 
     
-    private void clearHelpLabel()
-    {
-        lblHelp1.setText("");
-        lblHelp2.setText("");
-    }
-
 }

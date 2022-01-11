@@ -17,4 +17,28 @@
   <dependencies>
   </dependencies>
 
+  <build>
+    <plugins>
+        <!-- SpringBoot single JAR executable. -->
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <version>2.2.5.RELEASE</version>
+            <configuration>
+                <mainClass>ek.jainput.JaInputMain</mainClass>
+                <layout>JAR</layout>
+            </configuration>
+            <executions>
+                <execution>
+                    <id>exec-jar</id>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>repackage</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+  </build>
+
 </project>

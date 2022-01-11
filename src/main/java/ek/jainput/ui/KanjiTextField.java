@@ -8,7 +8,6 @@ import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.DefaultEditorKit;
 
@@ -46,7 +45,7 @@ public class KanjiTextField extends JPanel implements KeyListener
         txtInput.setFont(cfg.textFont);
         txtInput.setBackground(cfg.textBG);
         txtInput.setForeground(cfg.textFG);
-        txtInput.setBorder(new CompoundBorder(txtInput.getBorder(), new EmptyBorder(10, 5, 10, 5)));
+        txtInput.setBorder(new EmptyBorder(10, 5, 10, 5));
         txtInput.setAlignmentX(LEFT_ALIGNMENT);
         
         lblHelp1 = new JLabel();
@@ -72,6 +71,17 @@ public class KanjiTextField extends JPanel implements KeyListener
         this.textListener = listener;
     }
     
+    
+    public void setHelp1(String txt)
+    {
+        lblHelp1.setText(txt);
+    }
+
+    public void setHelp2(String txt)
+    {
+        lblHelp2.setText(txt);
+    }
+
     
     @Override
     public void keyTyped(KeyEvent e)
@@ -179,7 +189,7 @@ public class KanjiTextField extends JPanel implements KeyListener
         // Esc
         else if(ch == 27)
         {
-            clearHelpLabel();
+            clearHelp();
         }
         else
         {
@@ -203,7 +213,7 @@ public class KanjiTextField extends JPanel implements KeyListener
     }
 
     
-    private void clearHelpLabel()
+    public void clearHelp()
     {
         lblHelp1.setText("");
         lblHelp2.setText("");
@@ -214,7 +224,7 @@ public class KanjiTextField extends JPanel implements KeyListener
         // Esc
         if(ch == 27)
         {
-            clearHelpLabel();
+            clearHelp();
             key1 = 0;
         }
         else
@@ -230,7 +240,7 @@ public class KanjiTextField extends JPanel implements KeyListener
             {
                 insertAtCursor(kanji);
                 key1 = 0;
-                clearHelpLabel();
+                clearHelp();
             }
         }
     }
