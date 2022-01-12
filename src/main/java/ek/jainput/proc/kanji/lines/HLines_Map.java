@@ -6,13 +6,13 @@ public class HLines_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "宀 3  气 4  気 k  彡 /"
+        "气 4"
     };
     
     @Override
     public char getKey1() 
     {
-        return '-';
+        return ']';
     }
 
     @Override
@@ -26,12 +26,7 @@ public class HLines_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case '3': return("宀");
-
         case '4': return("气");
-        case 'k': return("気");
-        
-        case '/': return("彡");
         }
         
         return null;

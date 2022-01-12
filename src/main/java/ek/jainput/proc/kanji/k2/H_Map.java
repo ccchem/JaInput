@@ -6,7 +6,7 @@ public class H_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "竹 2  年 n  午 g  牛 u"
+        "竹 h  午 g  牛 u"
     };
 
     @Override
@@ -25,11 +25,10 @@ public class H_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case 'n': return("年");
         case 'g': return("午");
         case 'u': return("牛");
         
-        case '2': return("竹");
+        case 'h': return("竹");
         }
         
         return null;

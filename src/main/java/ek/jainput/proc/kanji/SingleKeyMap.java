@@ -21,32 +21,36 @@ public class SingleKeyMap
         keyMap['`'] = '丶';
         keyMap['~'] = '冫';
         
-        keyMap['_'] = '一';
+        keyMap['-'] = '一';
+        keyMap['_'] = '二';
         
-        keyMap['+'] = '十';
-        keyMap['='] = '二';
-        
-        keyMap['/'] = 'ノ';        
-        
-        keyMap['!'] = '人';
-        
+        keyMap['+'] = '宀';
+        keyMap['='] = '十';
+
+        keyMap['/'] = '人';
+        keyMap['?'] = 'ノ';
         
         keyMap['@'] = '火';
         
-        keyMap['3'] = '.';
+        keyMap['3'] = '三';
         keyMap['#'] = '井';
 
-        keyMap['4'] = '厶';
-        
+        keyMap['4'] = '厶';        
         keyMap['5'] = '五';
+        
+        keyMap['6'] = '八';
+        keyMap['^'] = '六';
         
         keyMap['&'] = '匕';
 
-        keyMap['8'] = '八';
+        keyMap['8'] = '.';
         keyMap['*'] = '米';
         
-        keyMap['9'] = '九';        
-        keyMap['0'] = '園';
+        keyMap['9'] = '几';
+        keyMap['('] = '九';
+        
+        keyMap['0'] = '口';
+        keyMap[')'] = '園';
         
         keyMap['{'] = '斤';
                 
@@ -101,7 +105,7 @@ public class SingleKeyMap
         keyMap['q'] = '手';
         keyMap['Q'] = '.';
 
-        keyMap['R'] = '口';
+        keyMap['R'] = '刀';
 
         keyMap['S'] = '阝';
 
@@ -109,13 +113,12 @@ public class SingleKeyMap
         keyMap['T'] = '夕';
 
         keyMap['u'] = '言';
-        keyMap['U'] = '.';
+        keyMap['U'] = '山';
 
         keyMap['V'] = '女';
 
         keyMap['W'] = '田';
         
-        keyMap['x'] = '乂';
         keyMap['X'] = '丬';
         
         keyMap['y'] = '卜';

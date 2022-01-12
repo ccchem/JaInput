@@ -10,6 +10,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.DefaultEditorKit;
+import javax.swing.undo.UndoManager;
 
 import ek.jainput.proc.TextListener;
 import ek.jainput.proc.kanji.SecondKeyMap;
@@ -32,12 +33,18 @@ public class KanjiTextField extends JPanel implements KeyListener
     
     private TextListener textListener;
     
+    private UndoManager undoMgr;
+    
+    
     public KanjiTextField(UISettings cfg)
     {
         super();
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         setBackground(cfg.labelBG);
 
+        undoMgr = new UndoManager();
+        undoMgr.setLimit(20);
+        
         txtInput = new JTextField();
         txtInput.setCaretColor(Color.GRAY);
         txtInput.addKeyListener(this);
@@ -63,6 +70,11 @@ public class KanjiTextField extends JPanel implements KeyListener
         add(txtInput);
         add(lblHelp1);
         add(lblHelp2);
+        
+        txtInput.getDocument().addUndoableEditListener((e) -> 
+        {
+            undoMgr.addEdit(e.getEdit()); 
+        });
     }
 
     
@@ -86,18 +98,24 @@ public class KanjiTextField extends JPanel implements KeyListener
     @Override
     public void keyTyped(KeyEvent e)
     {
+        boolean isCtrl = e.isControlDown();
         char ch = e.getKeyChar();
-        //System.out.println((int)ch);
-        
         e.consume();
-        
-        if(key1 != 0)
+
+        if(key1 == 0)
         {
-            processSecondKey(ch);
+            if(isCtrl)
+            {
+                processCtrl(ch);
+            }
+            else
+            {
+                processFirstKey(ch);
+            }
         }
         else
         {
-            processFirstKey(ch);
+            processSecondKey(ch);
         }
     }
 
@@ -124,6 +142,19 @@ public class KanjiTextField extends JPanel implements KeyListener
             
     }
 
+    
+    private void processCtrl(char ch)
+    {
+        // Ctrl-Z
+        if(ch == 26)
+        {
+            if(undoMgr.canUndo())
+            {
+                undoMgr.undo();
+            }
+        }
+    }
+    
     
     private char getSelectedChar()
     {

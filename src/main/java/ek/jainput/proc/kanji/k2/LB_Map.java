@@ -6,7 +6,7 @@ public class LB_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "ナ 2  反 h  皮 k  疒 3  氏 s"
+        "反 h  皮 k  疒 3  氏 s"
     };
     
     @Override
@@ -26,8 +26,6 @@ public class LB_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case '2': return("ナ");
-        
         case 'h': return("反");
         case 'k': return("皮");
 

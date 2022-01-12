@@ -6,7 +6,7 @@ public class F_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "中 n  央 o  夬 w"
+        "中 f  虫 m  夬 w"
     };
 
     @Override
@@ -25,8 +25,8 @@ public class F_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case 'n': return("中");
-        case 'o': return("央");        
+        case 'f': return("中");
+        case 'm': return("虫");        
         case 'w': return("夬");
 
         

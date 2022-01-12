@@ -6,7 +6,7 @@ public class N7_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "匕 t  七 7  衣 i  示 s"
+        "匕 t  七 7  子 k  衣 i  示 s"
     };
 
     @Override
@@ -27,6 +27,9 @@ public class N7_Map implements SecondKeyMap
         {
         case '7': return("七");
         case 't': return("匕");
+
+        case 'k': return("子");
+
         case 'i': return("衣");
         case 's': return("示");
         }
