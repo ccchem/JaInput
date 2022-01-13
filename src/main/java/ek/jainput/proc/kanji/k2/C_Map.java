@@ -6,7 +6,7 @@ public class C_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "金 c  食 b  穴 a",
+        "金 c  食 b  谷 t",
     };
     
     @Override
@@ -28,9 +28,9 @@ public class C_Map implements SecondKeyMap
         {
         case 'c': return("金");
         case 'b': return("食");
-
-        case 'a': return("穴");
-
+        
+        case 't': return("谷");
+        
         }
         
         return null;
