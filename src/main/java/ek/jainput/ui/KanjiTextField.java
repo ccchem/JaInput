@@ -13,6 +13,7 @@ import javax.swing.text.DefaultEditorKit;
 import javax.swing.undo.UndoManager;
 
 import ek.jainput.proc.TextListener;
+import ek.jainput.proc.kanji.AltKeyMap;
 import ek.jainput.proc.kanji.SecondKeyMap;
 import ek.jainput.proc.kanji.SingleKeyMap;
 import ek.jainput.proc.kanji.TwoKeyMap;
@@ -30,6 +31,7 @@ public class KanjiTextField extends JPanel implements KeyListener
     
     private SingleKeyMap sKeyMap = new SingleKeyMap();
     private TwoKeyMap twoKeyMap = new TwoKeyMap();
+    private AltKeyMap altKeyMap = new AltKeyMap();            
     
     private TextListener textListener;
     
@@ -99,6 +101,8 @@ public class KanjiTextField extends JPanel implements KeyListener
     public void keyTyped(KeyEvent e)
     {
         boolean isCtrl = e.isControlDown();
+        boolean isAlt = e.isAltDown();
+        
         char ch = e.getKeyChar();
         e.consume();
 
@@ -107,6 +111,10 @@ public class KanjiTextField extends JPanel implements KeyListener
             if(isCtrl)
             {
                 processCtrl(ch);
+            }
+            else if(isAlt)
+            {
+                processAlt(ch);
             }
             else
             {
@@ -142,6 +150,16 @@ public class KanjiTextField extends JPanel implements KeyListener
             
     }
 
+    
+    private void processAlt(char ch)
+    {
+        char kanji = altKeyMap.get(ch);
+        if(kanji != 0)
+        {
+            insertAtCursor("" + kanji);
+        }
+    }
+    
     
     private void processCtrl(char ch)
     {
@@ -283,7 +301,6 @@ public class KanjiTextField extends JPanel implements KeyListener
         if(!txt.isEmpty())
         {
             String kanji = KanjiService.getInstance().findKanjiByParts(txt);
-            System.out.println(kanji);
 
             if(kanji != null)
             {
