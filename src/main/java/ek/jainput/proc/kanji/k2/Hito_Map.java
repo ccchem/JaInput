@@ -6,7 +6,7 @@ public class Hito_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "行 2  入 h"
+        "行 2  以 i  欠 a  入 h"
     };
 
     @Override
@@ -27,6 +27,9 @@ public class Hito_Map implements SecondKeyMap
         {
         case '2': return("行");
         case 'h': return("入");
+
+        case 'i': return("以");
+        case 'a': return("欠");
 
         }
         

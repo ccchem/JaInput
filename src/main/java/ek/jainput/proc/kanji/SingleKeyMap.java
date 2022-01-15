@@ -46,8 +46,7 @@ public class SingleKeyMap
         keyMap['8'] = '.';
         keyMap['*'] = '米';
         
-        keyMap['9'] = '几';
-        keyMap['('] = '九';
+        keyMap['9'] = '九';
         
         keyMap['0'] = '口';
         keyMap[')'] = '園';
@@ -97,14 +96,13 @@ public class SingleKeyMap
         keyMap['P'] = '尸';
 
         keyMap['q'] = '手';
-        keyMap['Q'] = '.';
+        keyMap['Q'] = '干';
 
         keyMap['R'] = '刀';
 
         keyMap['S'] = '.';
 
-        keyMap['t'] = '立';
-        keyMap['T'] = '夕';
+        keyMap['T'] = '立';
 
         keyMap['u'] = '言';
         keyMap['U'] = '山';

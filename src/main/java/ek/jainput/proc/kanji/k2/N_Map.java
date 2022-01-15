@@ -6,7 +6,7 @@ public class N_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "几 1  鳥 t  色 i"
+        "鳥 t  色 i"
     };
     
     @Override

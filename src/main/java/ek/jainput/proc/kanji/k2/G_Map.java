@@ -6,7 +6,7 @@ public class G_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "干 2  平 b  半 n  生 s  羊 h"
+        "平 b  生 s  羊 h"
     };
 
     @Override
@@ -25,10 +25,7 @@ public class G_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case '2': return("干");
-
         case 'b': return("平");
-        case 'n': return("半");        
         case 's': return("生");
         case 'h': return("羊");
         

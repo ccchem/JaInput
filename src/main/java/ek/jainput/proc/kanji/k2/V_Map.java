@@ -6,7 +6,7 @@ public class V_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "女 o  予 a  凵 u"
+        "予 a"
     };
 
     @Override
@@ -25,11 +25,7 @@ public class V_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case 'o': return("女");
-        
         case 'a': return("予");
-        
-        case 'u': return("凵");
         
         }
         
