@@ -41,7 +41,8 @@ public class SingleKeyMap
         keyMap['6'] = '八';
         keyMap['^'] = '六';
         
-        keyMap['&'] = '匕';
+        keyMap['7'] = '匕';
+        keyMap['&'] = '比';        
 
         keyMap['8'] = '.';
         keyMap['*'] = '米';
@@ -62,7 +63,7 @@ public class SingleKeyMap
     {
         keyMap['A'] = '日';
         keyMap['B'] = '月';        
-        keyMap['C'] = '今';
+        keyMap['C'] = '.';
 
         keyMap['D'] = '.';
 
@@ -96,18 +97,18 @@ public class SingleKeyMap
         keyMap['P'] = '尸';
 
         keyMap['q'] = '手';
-        keyMap['Q'] = '干';
-
+        keyMap['Q'] = '丁';
+        
         keyMap['R'] = '刀';
-
-        keyMap['S'] = '.';
+        keyMap['S'] = '弓';
 
         keyMap['T'] = '立';
 
         keyMap['u'] = '言';
         keyMap['U'] = '山';
 
-        keyMap['V'] = '女';
+        keyMap['v'] = '女';
+        keyMap['V'] = '衣';
 
         keyMap['W'] = '田';
         

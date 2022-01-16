@@ -6,7 +6,7 @@ public class B_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "周 1  高 t  咼 2  舟 f  用 y  冊 4  身 m"
+        "周 1  高 t  咼 2  舟 f  用 y  冊 4"
     };
     
     @Override
@@ -35,8 +35,6 @@ public class B_Map implements SecondKeyMap
         case 'y': return("用");
         case '4': return("冊");
 
-        case 'm': return("身");
-        
         }
         
         return null;

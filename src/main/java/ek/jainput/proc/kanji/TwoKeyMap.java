@@ -4,7 +4,6 @@ import ek.jainput.proc.kanji.k2.Hito_Map;
 import ek.jainput.proc.kanji.k2.J_Map;
 import ek.jainput.proc.kanji.k2.K_Map;
 import ek.jainput.proc.kanji.k2.M_Map;
-import ek.jainput.proc.kanji.k2.N7_Map;
 import ek.jainput.proc.kanji.k2.N_Map;
 import ek.jainput.proc.kanji.k2.O_Map;
 import ek.jainput.proc.kanji.k2.P_Map;
@@ -12,7 +11,6 @@ import ek.jainput.proc.kanji.k2.R_Map;
 import ek.jainput.proc.kanji.k2.S_Map;
 import ek.jainput.proc.kanji.k2.T_Map;
 import ek.jainput.proc.kanji.k2.LB_Map;
-import ek.jainput.proc.kanji.k2.V_Map;
 import ek.jainput.proc.kanji.k2.W_Map;
 import ek.jainput.proc.kanji.k2.X_Map;
 import ek.jainput.proc.kanji.k2.A_Map;
@@ -74,16 +72,8 @@ public class TwoKeyMap
         addKeyMap(new S_Map());
         addKeyMap(new T_Map());
 
-        addKeyMap(new V_Map());
         addKeyMap(new W_Map());
         addKeyMap(new X_Map());
-
-        
-        // 厶
-        //addKey1Map(new N4Proc());
-        
-        
-        addKeyMap(new N7_Map());
     }
     
     

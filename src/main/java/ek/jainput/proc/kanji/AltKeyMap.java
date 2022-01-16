@@ -17,7 +17,9 @@ public class AltKeyMap
     
     private void init()
     {
-        
+        keyMap['3'] = '阝';
+                
+        keyMap['6'] = '今';
         keyMap['7'] = '子';
         
         keyMap['='] = '癶';
@@ -27,14 +29,17 @@ public class AltKeyMap
         keyMap['b'] = '几';        
 
         keyMap['f'] = '中';
-        keyMap['g'] = '也';
+        keyMap['g'] = '干';
         
         keyMap['h'] = '竹';
         keyMap['i'] = '工';
-        keyMap['j'] = '丁';        
+        keyMap['j'] = '示';        
+        
+        keyMap['l'] = '也';
         
         keyMap['r'] = '力';        
         
-        keyMap['3'] = '阝';
+        keyMap['v'] = '戈';        
+        
     }
 }

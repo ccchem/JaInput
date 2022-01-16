@@ -6,7 +6,7 @@ public class R_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "石 i  呂 2  豆 m  舌 s"
+        "呂 2  品 3  石 i  豆 m  舌 s"
     };
     
     @Override
@@ -28,6 +28,7 @@ public class R_Map implements SecondKeyMap
         {
         case 'i': return("石");        
         case '2': return("呂");
+        case '3': return("品");        
         
         case 'm': return("豆");
         case 's': return("舌");

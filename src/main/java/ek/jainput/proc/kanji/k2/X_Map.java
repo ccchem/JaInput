@@ -6,7 +6,7 @@ public class X_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "弋 i  戈 h  斗 t  飛 b  区 x"
+        "弋 i  斗 t  飛 b  区 x"
     };
     
     @Override
@@ -27,7 +27,6 @@ public class X_Map implements SecondKeyMap
         switch(ch)
         {
         case 'i': return("弋");
-        case 'h': return("戈");
         case 't': return("斗");
         case 'b': return("飛");
 
