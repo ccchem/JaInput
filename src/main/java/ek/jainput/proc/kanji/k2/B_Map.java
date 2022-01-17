@@ -6,7 +6,7 @@ public class B_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "周 1  高 t  咼 2  舟 f  用 y  冊 4"
+        "周 1  舟 f  用 y  冊 4"
     };
     
     @Override
@@ -27,8 +27,6 @@ public class B_Map implements SecondKeyMap
         switch(ch)
         {
         case '1': return("周");
-        case 't': return("高");
-        case '2': return("咼");
 
         case 'f': return("舟");
 

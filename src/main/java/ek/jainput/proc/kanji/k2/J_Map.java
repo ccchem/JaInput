@@ -6,7 +6,7 @@ public class J_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "勹 1  勿 3  豕 b  予 a"
+        "勹 1  勿 3  豕 b  予 a  羽 w"
     };
     
     @Override
@@ -31,6 +31,8 @@ public class J_Map implements SecondKeyMap
         case 'b': return("豕");
         
         case 'a': return("予");
+        case 'w': return("羽");
+        
         }
         
         return null;

@@ -27,7 +27,8 @@ public class AltKeyMap
                 
         keyMap['a'] = '目';
         keyMap['b'] = '几';        
-
+        
+        keyMap['e'] = '隹';
         keyMap['f'] = '中';
         keyMap['g'] = '干';
         
@@ -36,8 +37,11 @@ public class AltKeyMap
         keyMap['j'] = '示';        
         
         keyMap['l'] = '也';
+        keyMap['m'] = '又';
         
-        keyMap['r'] = '力';        
+        keyMap['p'] = '卩';
+        keyMap['q'] = '可';        
+        keyMap['r'] = '力';
         
         keyMap['v'] = '戈';        
         

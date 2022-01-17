@@ -29,13 +29,16 @@ public class SingleKeyMap
 
         keyMap['/'] = '人';
         keyMap['?'] = '火';
-        
+                
+        keyMap['!'] = '行';
         keyMap['@'] = '.';
         
         keyMap['3'] = '三';
         keyMap['#'] = '井';
 
-        keyMap['4'] = '厶';        
+        keyMap['4'] = '厶';
+        keyMap['$'] = '至';
+        
         keyMap['5'] = '五';
         
         keyMap['6'] = '八';
