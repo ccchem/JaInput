@@ -23,8 +23,8 @@ public class AltKeyMap
         keyMap['7'] = '子';
         
         keyMap['='] = '癶';
-        keyMap['/'] = 'ノ';
-                
+        keyMap['/'] = '者';
+
         keyMap['a'] = '目';
         keyMap['b'] = '几';        
         
@@ -42,7 +42,9 @@ public class AltKeyMap
         keyMap['p'] = '卩';
         keyMap['q'] = '可';        
         keyMap['r'] = '力';
-        
+        keyMap['t'] = '夕';        
+                
+        keyMap['u'] = '川';
         keyMap['v'] = '戈';        
         
     }

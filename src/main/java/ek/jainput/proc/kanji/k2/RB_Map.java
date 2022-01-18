@@ -1,12 +1,12 @@
-package ek.jainput.proc.kanji.lines;
+package ek.jainput.proc.kanji.k2;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
-public class HLines_Map implements SecondKeyMap
+public class RB_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "气 4"
+        "气 4  州 s  ノ /"
     };
     
     @Override
@@ -26,7 +26,12 @@ public class HLines_Map implements SecondKeyMap
     {
         switch(ch)
         {
+        case '/': return("ノ");
+        
         case '4': return("气");
+        
+        case 's': return("州");        
+
         }
         
         return null;

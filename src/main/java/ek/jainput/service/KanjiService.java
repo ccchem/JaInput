@@ -25,9 +25,10 @@ public class KanjiService
      */
     private KanjiService() throws Exception
     {
-        partsMap = new HashMap<>(2500);
+        partsMap = new HashMap<>(3500);
         loadPartsFile(partsMap, "primary.txt");
         loadPartsFile(partsMap, "secondary.txt");
+        loadPartsFile(partsMap, "names.txt");
         
         onReading = new HashMap<>(2500);
         loadReadingFile(onReading, "on-1-8.txt");
