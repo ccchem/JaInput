@@ -6,7 +6,7 @@ public class Hito2_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "疋 -  走 h",
+        "以 i  疋 1  走 h",
     };
 
     @Override
@@ -25,7 +25,8 @@ public class Hito2_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case '-': return("疋");
+        case 'i': return("以");
+        case '1': return("疋");
         case 'h': return("走");
         
         }

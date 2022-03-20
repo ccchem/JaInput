@@ -36,7 +36,7 @@ public class AltKeyMap
         keyMap['i'] = '工';
         keyMap['j'] = '示';        
         
-        keyMap['l'] = '也';
+        keyMap['l'] = '儿';
         keyMap['m'] = '又';
         
         keyMap['p'] = '卩';

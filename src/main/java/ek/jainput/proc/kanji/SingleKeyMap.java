@@ -77,8 +77,7 @@ public class SingleKeyMap
 
         keyMap['G'] = '土';
 
-        keyMap['h'] = '竹';
-        keyMap['H'] = '牛';
+        keyMap['H'] = '門';
 
         keyMap['i'] = '糸';
         keyMap['I'] = '王';
@@ -87,8 +86,7 @@ public class SingleKeyMap
 
         keyMap['K'] = '木';
 
-        keyMap['l'] = '心';
-        keyMap['L'] = '儿';
+        keyMap['L'] = '心';
 
         keyMap['M'] = '水';
 
