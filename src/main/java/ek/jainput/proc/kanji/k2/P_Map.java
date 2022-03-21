@@ -6,7 +6,7 @@ public class P_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "方 h  高 t  咼 2  "
+        "高 t  咼 2  "
     };
     
     @Override

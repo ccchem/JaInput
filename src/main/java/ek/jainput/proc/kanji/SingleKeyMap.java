@@ -52,8 +52,7 @@ public class SingleKeyMap
         
         keyMap['9'] = '九';
         
-        keyMap['0'] = '口';
-        keyMap[')'] = '園';
+        keyMap[')'] = '口';
         
         keyMap['{'] = '斤';
                 

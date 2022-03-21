@@ -2,17 +2,17 @@ package ek.jainput.proc.kanji.k2;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
-public class Hito_Map implements SecondKeyMap
+public class N2_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "入 i  久 h  欠 k  及 o"
+        "以 i  疋 1  走 h",
     };
 
     @Override
     public char getKey1() 
     {
-        return '1';
+        return '2';
     }
     
     public String[] getHelp() 
@@ -25,11 +25,10 @@ public class Hito_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case 'i': return("入");
-        case 'h': return("久");
-        case 'k': return("欠");
-        case 'o': return("及");
-
+        case 'i': return("以");
+        case '1': return("疋");
+        case 'h': return("走");
+        
         }
         
         return null;

@@ -6,7 +6,7 @@ public class K_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "本 h  材 z  禾 2  采 i"
+        "本 h  材 z  采 i  束 b  東 t"
     };
 
     @Override
@@ -28,7 +28,8 @@ public class K_Map implements SecondKeyMap
         case 'h': return("本");
         case 'z': return("材");
         
-        case '2': return("禾");
+        case 'b': return("束");
+        case 't': return("東");
         
         case 'i': return("采");
         

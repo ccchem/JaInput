@@ -21,6 +21,7 @@ public class AltKeyMap
                 
         keyMap['6'] = '今';
         keyMap['7'] = '子';
+        keyMap['0'] = '園';
         
         keyMap['='] = '癶';
         keyMap['/'] = '者';
@@ -36,6 +37,7 @@ public class AltKeyMap
         keyMap['i'] = '工';
         keyMap['j'] = '示';        
         
+        keyMap['k'] = '禾';
         keyMap['l'] = '儿';
         keyMap['m'] = '又';
         

@@ -1,9 +1,10 @@
 package ek.jainput.proc.kanji;
 
-import ek.jainput.proc.kanji.k2.Hito_Map;
+import ek.jainput.proc.kanji.k2.N1_Map;
 import ek.jainput.proc.kanji.k2.J_Map;
 import ek.jainput.proc.kanji.k2.K_Map;
 import ek.jainput.proc.kanji.k2.M_Map;
+import ek.jainput.proc.kanji.k2.N0_Map;
 import ek.jainput.proc.kanji.k2.N_Map;
 import ek.jainput.proc.kanji.k2.O_Map;
 import ek.jainput.proc.kanji.k2.P_Map;
@@ -23,7 +24,7 @@ import ek.jainput.proc.kanji.k2.E_Map;
 import ek.jainput.proc.kanji.k2.F_Map;
 import ek.jainput.proc.kanji.k2.G_Map;
 import ek.jainput.proc.kanji.k2.H_Map;
-import ek.jainput.proc.kanji.k2.Hito2_Map;
+import ek.jainput.proc.kanji.k2.N2_Map;
 
 public class TwoKeyMap
 {
@@ -44,10 +45,12 @@ public class TwoKeyMap
     {
         addKeyMap(new LB_Map());
         addKeyMap(new RB_Map());
-        
-        addKeyMap(new Hito_Map());
-        addKeyMap(new Hito2_Map());
 
+        // Numbers
+        addKeyMap(new N1_Map());
+        addKeyMap(new N2_Map());
+        addKeyMap(new N0_Map());
+        
         addKeyMap(new A_Map());
         addKeyMap(new B_Map());
         addKeyMap(new C_Map());
