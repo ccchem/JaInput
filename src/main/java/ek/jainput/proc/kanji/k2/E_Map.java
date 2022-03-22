@@ -6,7 +6,7 @@ public class E_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "非 h  馬 u  巨 k  臣 s"
+        "長 n  非 h  馬 u  巨 k  臣 s"
     };
     
     @Override
@@ -25,7 +25,9 @@ public class E_Map implements SecondKeyMap
     public String getKanji(char ch)
     {
         switch(ch)
-        {        
+        {              
+        case 'n': return("長");
+        
         case 'k': return("巨");
         case 's': return("臣");
                 
