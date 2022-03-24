@@ -34,7 +34,7 @@ public class AltKeyMap
         keyMap['g'] = '干';
         
         keyMap['h'] = '竹';
-        keyMap['i'] = '工';
+        keyMap['i'] = '糸';
         keyMap['j'] = '示';        
         
         keyMap['k'] = '禾';

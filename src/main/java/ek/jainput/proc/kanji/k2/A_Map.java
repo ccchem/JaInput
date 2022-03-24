@@ -6,7 +6,7 @@ public class A_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "皿 4  貝 k  見 m  頁 p  直 c"
+        "日 1  目 2  皿 3  百 h"
     };
     
     @Override
@@ -26,13 +26,11 @@ public class A_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case '4': return("皿");
-
-        case 'k': return("貝");
-        case 'm': return("見");
-
-        case 'p': return("頁");
-        case 'c': return("直");
+        case '1': return("日");
+        case '2': return("目");
+        case '3': return("皿");
+        
+        case 'h': return("百");
         
         }
         

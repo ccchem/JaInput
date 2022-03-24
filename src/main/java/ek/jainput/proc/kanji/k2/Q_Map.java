@@ -6,7 +6,7 @@ public class Q_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "手 t  毛 k  丁 c  予 a  可 m"
+        "手 1  寺 t  寸 s  丁 c  才 2  予 a"
     };
     
     @Override
@@ -26,10 +26,14 @@ public class Q_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case 't': return("手");
-        case 'k': return("毛");
-
+        case '1': return("手");
+        
+        case 't': return("寺");
+        case 's': return("寸");        
+        
         case 'c': return("丁");
+        case '2': return("才");
+        
         case 'a': return("予");
 
         }

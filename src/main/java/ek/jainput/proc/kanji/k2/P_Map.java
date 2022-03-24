@@ -6,7 +6,7 @@ public class P_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "高 t  咼 2  "
+        "尸 p  卩 w  尺 r  高 t  咼 2  卵 3"
     };
     
     @Override
@@ -26,11 +26,14 @@ public class P_Map implements SecondKeyMap
     {
         switch(ch)
         {        
-        case 'h': return("方");
+        case 'p': return("尸");
+        case 'w': return("卩");
+        case 'r': return("尺");
         
         case 't': return("高");
         case '2': return("咼");
-
+        case '3': return("卵");
+        
         }
         
         return null;

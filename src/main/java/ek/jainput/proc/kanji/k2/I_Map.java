@@ -28,12 +28,14 @@ public class I_Map implements SecondKeyMap
         {
         
         case 'o': return("王");
-        case 's': return("生");        
+        case 's': return("生");
         case 'h': return("羊");        
 
         case 'k': return("工");
         
         case 'a': return("青");
+        
+        case 'i': return("糸");
         
         }
         
