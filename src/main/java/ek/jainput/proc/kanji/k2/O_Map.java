@@ -6,7 +6,7 @@ public class O_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "犬 i  矢 y  天 t  夭 w"
+        "大 o  犬 i  矢 y  天 t  夭 w"
     };
     
     @Override
@@ -25,7 +25,8 @@ public class O_Map implements SecondKeyMap
     public String getKanji(char ch)
     {
         switch(ch)
-        {
+        {        
+        case 'o': return("大");
         case 'i': return("犬");
         case 'y': return("矢");        
         case 't': return("天");

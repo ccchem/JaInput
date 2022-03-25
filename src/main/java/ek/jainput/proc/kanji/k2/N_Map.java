@@ -6,7 +6,7 @@ public class N_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "鳥 t"
+        "馬 u  鳥 t"
     };
     
     @Override
@@ -26,6 +26,7 @@ public class N_Map implements SecondKeyMap
     {
         switch(ch)
         {
+        case 'u': return("馬");
         case 't': return("鳥");
         }
         

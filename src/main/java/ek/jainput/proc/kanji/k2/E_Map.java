@@ -6,7 +6,7 @@ public class E_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "長 n  非 h  馬 u  巨 k  臣 s"
+        "ヨ e  事 k  長 n  非 h  巨 1  臣 2"
     };
     
     @Override
@@ -26,13 +26,15 @@ public class E_Map implements SecondKeyMap
     {
         switch(ch)
         {              
+        case 'e': return("ヨ");
+        case 'k': return("事");
+
         case 'n': return("長");
         
-        case 'k': return("巨");
-        case 's': return("臣");
+        case '1': return("巨");
+        case '2': return("臣");
                 
         case 'h': return("非");
-        case 'u': return("馬");
         }
         
         return null;

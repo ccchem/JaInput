@@ -2,17 +2,17 @@ package ek.jainput.proc.kanji.k2;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
-public class C2_Map implements SecondKeyMap
+public class O2_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "春 h  巻 m  挙 a",
+        "春 h  巻 m  挙 a"
     };
     
     @Override
     public char getKey1() 
     {
-        return 'C';
+        return 'O';
     }
 
     @Override
@@ -25,10 +25,10 @@ public class C2_Map implements SecondKeyMap
     public String getKanji(char ch)
     {
         switch(ch)
-        {
+        {        
         case 'h': return("春");
         case 'm': return("巻");
-        case 'a': return("挙");        
+        case 'a': return("挙");
         
         }
         
