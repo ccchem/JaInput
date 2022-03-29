@@ -6,7 +6,7 @@ public class Num_1_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "入 i  久 h  欠 k  及 o"
+        "人 1  行 2  火 3  入 i  久 h  欠 k"
     };
 
     @Override
@@ -25,10 +25,13 @@ public class Num_1_Map implements SecondKeyMap
     {
         switch(ch)
         {
+        case '1': return("人");
+        case '2': return("行");
+        case '3': return("火");
+
         case 'i': return("入");
         case 'h': return("久");
         case 'k': return("欠");
-        case 'o': return("及");
 
         }
         

@@ -6,7 +6,7 @@ public class T_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "音 o  幸 s  新 a"
+        "立 t  音 o  幸 s  新 a  夕 y"
     };
     
     @Override
@@ -26,12 +26,14 @@ public class T_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        
+        case 't': return("立");        
         case 'o': return("音");
         case 's': return("幸");
         
         case 'a': return("新");        
-        
+
+        case 'y': return("夕");
+
         }
         
         return null;

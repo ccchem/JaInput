@@ -6,7 +6,7 @@ public class RB_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "气 4  州 s  ノ /"
+        "气 4  州 s"
     };
     
     @Override
@@ -26,8 +26,6 @@ public class RB_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case '/': return("ノ");
-        
         case '4': return("气");
         
         case 's': return("州");        
