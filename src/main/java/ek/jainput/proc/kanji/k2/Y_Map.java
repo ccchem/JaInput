@@ -2,17 +2,17 @@ package ek.jainput.proc.kanji.k2;
 
 import ek.jainput.proc.kanji.SecondKeyMap;
 
-public class B2_Map implements SecondKeyMap
+public class Y_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "同 o  周 m  高 t  咼 2  舟 f"
+        "卜 y  止 t  丬 1"
     };
     
     @Override
     public char getKey1() 
     {
-        return 'B';
+        return 'y';
     }
     
     @Override
@@ -26,12 +26,12 @@ public class B2_Map implements SecondKeyMap
     {
         switch(ch)
         {
-        case 'o': return("同");
-        case 'm': return("周");
-        case 't': return("高");
-        case '2': return("咼");
-
-        case 'f': return("舟");
+        
+        case 'y': return("卜");
+        case 't': return("止");
+        
+        case '1': return("丬");        
+        
         }
         
         return null;

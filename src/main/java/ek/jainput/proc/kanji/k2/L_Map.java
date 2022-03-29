@@ -6,7 +6,7 @@ public class L_Map implements SecondKeyMap
 {
     private static final String[] helpText = 
     {
-        "兄 a  毛 k  也 c  乙 1"
+        "心 k  色 i  也 c  乙 1  毛 2  兄 a"
     };
     
     @Override
@@ -25,12 +25,16 @@ public class L_Map implements SecondKeyMap
     public String getKanji(char ch)
     {
         switch(ch)
-        {        
-        case 'a': return("兄");
+        {
+        case 'k': return("心");
+        case 'i': return("色");
         case 'c': return("也");
-        case 'k': return("毛");
+
         case '1': return("乙");
-        
+        case '2': return("毛");
+
+        case 'a': return("兄");
+
         }
         
         return null;
